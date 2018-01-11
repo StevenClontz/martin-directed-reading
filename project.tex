@@ -10,7 +10,7 @@
   \end{proposition}
 
   \begin{proof}
-  	proposition 1
+  	Proposition 1
   	\newline
 	X $\in$ $\tau$
 	\newline
@@ -19,4 +19,32 @@
 	If U, V $\subseteq$ X $\wedge$ X$\setminus$U $\in \tau$  $\wedge$ X$\setminus$V $\in \tau$ then X$\setminus$U $\cup$ V $\in \tau$
   \end{proof}
 
+
+
+	\begin{proposition}
+		A set K in a topological space X is closed if and only if K contains all its limit points.
+	\end{proposition}
+	\begin{proof}
+		Proposition 2 Part 1 - Prove if K contains all its limit points then that implies X$\setminus$K $\in \tau$
+		\newline
+		$\exists$ x, z, $\alpha, \beta, \lambda, \epsilon \in$ X
+		\newline
+		K $\subseteq$ X, B $\subseteq$ X, C $\subseteq$ X
+		\newline
+		x, z $\in$ K, K = $\lbrace$ y $\mid$ x $\leq$ y $\leq$ z $\rbrace$
+		\newline
+		x, $\alpha, \beta \in$ B, B = $\lbrace \left( \alpha, \beta \right) \mid \alpha <$ x $< \beta  \rbrace$
+		\newline
+		z, $\lambda, \epsilon \in$ C, C = $\lbrace \left( \lambda, \epsilon \right) \mid \lambda <$ z $< \epsilon \rbrace$
+		\newline
+		K $\cap$ B = $[$ x, $\beta  )$, x $\neq \beta \therefore$ x is a limit point.
+		\newline
+		K $\cap$ C = $( \lambda$, z $]$, z $\neq \lambda \therefore$ z is a limit point.
+		\newline
+		x, z $\in$ K, K = $\lbrace$ y $\mid$ x $\leq$ y $\leq$ z $\rbrace \therefore$ K is closed $\Rightarrow$ X$\setminus$K $\in \tau$
+		\newline
+	\end{proof}
+	\begin{proof}
+	Proposition 2 Part 2 - Prove if X$\setminus$K $\in \tau$ then that implies that K contains all of its limit points.
+	\end{proof}
 \end{document}
