@@ -25,6 +25,14 @@
 	A = (j, k) $\in$ X
 	\newline
 	$\overline{A}$ = (a, j] $\cup$ [k, z) $\not\in \tau$
+	\newline \newline
+	If $A \subseteq \tau$ then $\bigcup A \in \tau$
+	\newline
+	If $A$ contains at least one limit point $k$, we call this $\overline{A}$ if $\overline{A} \not\in A$, then $\overline{A} \not\in \tau$
+	\newline
+	If $\overline{A} \not\in \tau$, then $\overline{\bigcup A} \not\in \tau$
+	\newline
+	$\overline{\bigcup A} = \bigcap \overline{A} \not\in \tau$
   \end{proof}
 
 
@@ -34,25 +42,13 @@
 	\end{proposition}
 	\begin{proof}
 		Proposition 2 Part 1 - Prove if K contains all its limit points then that implies X$\setminus$K $\in \tau$
-		\newline
-		$\exists$ x, z, $\alpha, \beta, \lambda, \epsilon \in$ X
-		\newline
-		K $\subseteq$ X, B $\subseteq$ X, C $\subseteq$ X
-		\newline
-		x, z $\in$ K, K = $\lbrace$ y $\mid$ x $\leq$ y $\leq$ z $\rbrace$
-		\newline
-		x, $\alpha, \beta \in$ B, B = $\lbrace \left( \alpha, \beta \right) \mid \alpha <$ x $< \beta  \rbrace$
-		\newline
-		z, $\lambda, \epsilon \in$ C, C = $\lbrace \left( \lambda, \epsilon \right) \mid \lambda <$ z $< \epsilon \rbrace$
-		\newline
-		K $\cap$ B = $[$ x, $\beta  )$, x $\neq \beta \therefore$ x is a limit point.
-		\newline
-		K $\cap$ C = $( \lambda$, z $]$, z $\neq \lambda \therefore$ z is a limit point.
-		\newline
-		x, z $\in$ K, K = $\lbrace$ y $\mid$ x $\leq$ y $\leq$ z $\rbrace \therefore$ K is closed $\Rightarrow$ X$\setminus$K $\in \tau$
-		\newline
+
 	\end{proof}
 	\begin{proof}
 	Proposition 2 Part 2 - Prove if X$\setminus$K $\in \tau$ then that implies that K contains all of its limit points.
+		\newline
+		Suppose $\exists K \in X$ and that $K$ contains all its limit points.
+		\newline
+		$\exists  x$ such that $x \in X \setminus K$. It follows that if $x \in X \setminus K$ then $x \not\in K \Rightarrow x \neq $ limit point $\in K$. $\therefore \exists \bigcup x'$ limit points $\in K$
 	\end{proof}
 \end{document}
