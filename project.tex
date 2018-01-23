@@ -10,30 +10,42 @@
   \end{proposition}
 
   \begin{proof}
-  	Proposition 1
+  	Proposition 1 - Any finite union of closed sets is closed.
   	\newline
-	A, B $\in \tau \Rightarrow$ A $\cap$ B $\in \tau$ $\Rightarrow \overline{A \cap B} \not\in \tau$
-	\newline
-	$\overline{A \cap B} = \overline{A} \cup \overline{B}$
-	\newline
-	$\overline{A} \cup \overline{B} \not\in \tau$
-	\newline \newline
-	Also:
-	\newline
-	X = (a, z) $\in \tau$
-	\newline
-	A = (j, k) $\in$ X
-	\newline
-	$\overline{A}$ = (a, j] $\cup$ [k, z) $\not\in \tau$
-	\newline \newline
-	If $A \subseteq \tau$ then $\bigcup A \in \tau$
-	\newline
-	If $A$ contains at least one limit point $k$, we call this $\overline{A}$ if $\overline{A} \not\in A$, then $\overline{A} \not\in \tau$
-	\newline
-	If $\overline{A} \not\in \tau$, then $\overline{\bigcup A} \not\in \tau$
-	\newline
-	$\overline{\bigcup A} = \bigcap \overline{A} \not\in \tau$
-  \end{proof}
+  	Let C, D be closed sets.
+  	\newline
+  	Let A, B be compliments of C, D so A, B are open.
+  	\newline
+  	Then, A $\cap$ B is also open.
+  	\newline
+  	Thus, X$\setminus$(A $\cap$ B) is closed.
+  	\newline
+  	X$\setminus$(A $\cap$ B) = X$\setminus$A $\cap$ X$\setminus$B = C $\cup$ D
+  	\newline\newline
+  	Inductive Proof:
+  	\newline
+  	$\mathcal{C}_1$ = C $\cup$ D, $\mathcal{C}_1$ is closed.
+  	\newline
+  	$\mathcal{C}_2$ = $\mathcal{C}_1 \cup$ E, $\mathcal{C}_2$ is closed.
+  	\newline
+  	$\mathcal{C}_n$ = $\mathcal{C}_1 \cup \mathcal{C}_2 \cup ... \cup \mathcal{C}_(n-1)$, $\mathcal{C}_n$ is closed.
+  	\newline
+  	$\mathcal{C}_(n+1)$ = $\mathcal{C}_n \cup$ Z, $\mathcal{C}_(n+1)$ is closed.
+  	\newline\newline
+  	Proposition 1 - Any arbitrary intersection of closed sets is closed.
+  	\newline
+  	Let $\mathcal{C}$ be a collection of closed sets.
+  	\newline
+  	Let $\mathcal{U}$ be the compliment of $\mathcal{C}$, so $\mathcal{U}$ is a collection of open sets.
+  	\newline
+  	Then, $\bigcup \mathcal{U}$ is also open.
+  	\newline
+  	Thus, X$\setminus\bigcup\mathcal{U}$ is closed.
+  	\newline
+  	X$\setminus\bigcup\mathcal{U}$ = $\bigcap\mathcal{C}$
+  	\newline
+  	Therefore, $\bigcap\mathcal{C}$ is closed.
+	\end{proof}
 
 
 
@@ -41,14 +53,18 @@
 		A set K in a topological space X is closed if and only if K contains all its limit points.
 	\end{proposition}
 	\begin{proof}
-		Proposition 2 Part 1 - Prove if K contains all its limit points then that implies X$\setminus$K $\in \tau$
-
-	\end{proof}
-	\begin{proof}
-	Proposition 2 Part 2 - Prove if X$\setminus$K $\in \tau$ then that implies that K contains all of its limit points.
-		\newline
-		Suppose $\exists K \in X$ and that $K$ contains all its limit points.
-		\newline
-		$\exists  x$ such that $x \in X \setminus K$. It follows that if $x \in X \setminus K$ then $x \not\in K \Rightarrow x \neq $ limit point $\in K$. $\therefore \exists \bigcup x'$ limit points $\in K$
+	Proposition 2
+	\newline
+	Let K = X, then K is closed because $\emptyset$ is open.
+	\newline
+	Let x $\in$ X$\setminus$K, so x is not a limit point of K.
+	\newline
+	$\exists \ell \in \mathcal{U}_\ell \in \tau$ such that $\forall$ k $\in$ K besides $\ell$, k $\not\in \mathcal{U}_\ell$
+	\newline
+	Therefore, $\mathcal{U}_\ell$ is the compliment of K, so $\mathcal{U}_\ell$ is open.
+	\newline
+	$\mathcal{U}_\ell$ = X$\setminus$K
+	\newline
+	Thus, X$\setminus$K = $\bigcup$ { $\ell \in \mathcal{U}_\ell$ : $\ell \neq$ k } is open. 
 	\end{proof}
 \end{document}
