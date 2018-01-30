@@ -4,7 +4,13 @@
 
 \begin{document}
 
+	\begin{proposition}
+	Puzzle 1: Find an infinite collection of open intervals in $\mathbb{R}$ whose intersection is not an open interval.
+	\end{proposition}
 
+	\begin{proof}
+	$X = \bigcap\lbrace (\frac{-1}{n}, \frac{1}{n}) : n \in \mathbb{Z}^+\rbrace$
+	\end{proof}
   \begin{proposition}
       Any finite union of closed sets is closed, and any arbitrary intersection of closed sets is closed.
   \end{proposition}
@@ -20,23 +26,23 @@
   	\newline
   	Thus, X$\setminus$(A $\cap$ B) is closed.
   	\newline
-  	X$\setminus$(A $\cap$ B) = X$\setminus$A $\cap$ X$\setminus$B = C $\cup$ D
+  	X$\setminus$(A $\cap$ B) = X$\setminus$A $\cup$ X$\setminus$B = C $\cup$ D
   	\newline\newline
   	Inductive Proof:
   	\newline
-  	$\mathcal{C}_1$ = C $\cup$ D, $\mathcal{C}_1$ is closed.
+  	Base Case: C $\cup$ D is closed.
   	\newline
-  	$\mathcal{C}_2$ = $\mathcal{C}_1 \cup$ E, $\mathcal{C}_2$ is closed.
+  	Inductive Hypothesis:
   	\newline
-  	$\mathcal{C}_n$ = $\mathcal{C}_1 \cup \mathcal{C}_2 \cup ... \cup \mathcal{C}_(n-1)$, $\mathcal{C}_n$ is closed.
+  	Assume C$_1$ $\cup $ C$_2 \cup ...$ $\cup $ C$_n$ is closed for closed sets C$_i$.
   	\newline
-  	$\mathcal{C}_(n+1)$ = $\mathcal{C}_n \cup$ Z, $\mathcal{C}_(n+1)$ is closed.
+	Then C$_1$ $\cup $ C$_2 \cup ...$ $\cup $ C$_n$ = K, K $\cup$ C$_{n+1}$ is closed.
   	\newline\newline
   	Proposition 1 - Any arbitrary intersection of closed sets is closed.
   	\newline
   	Let $\mathcal{C}$ be a collection of closed sets.
   	\newline
-  	Let $\mathcal{U}$ be the compliment of $\mathcal{C}$, so $\mathcal{U}$ is a collection of open sets.
+  	Let $\mathcal{U} = \lbrace$X$\setminus$C : C $\in \mathcal{C}\rbrace$, so $\mathcal{U}$ is a collection of open sets.
   	\newline
   	Then, $\bigcup \mathcal{U}$ is also open.
   	\newline
@@ -47,24 +53,92 @@
   	Therefore, $\bigcap\mathcal{C}$ is closed.
 	\end{proof}
 
-
-
+	\begin{lemma}
+	A set U is open if and only if for every point $x \in$ U, there exists an open set U$_x$ where $x \in $ U$_x \subseteq$ U
+	\end{lemma}
+	\begin{proof} Suppose U is open
+	\newline
+		Then for all x $\in$ U there exists an open subset of U, U$_x$ such that x $\in$ U$_x$
+	\end{proof}
+	\begin{proof} Suppose there is an open set $\lbrace$U$_x$ : x $\in$ U$_x \rbrace \subseteq$ U.
+	\newline
+	We want to show that U is open.
+	\newline
+	If U$_x \subseteq$ U, then for all $x \in$ U$_x$, $x \in$ U
+	\newline
+	U$_x \subseteq$ U is open if U$_x \subseteq \tau$
+	\newline
+	If U$_x \subseteq \tau$, then $\bigcup$U$_x \in \tau$
+	\newline
+	$\bigcup$U$_x$ = U $\in \tau$, so U is open.
+	\end{proof}
 	\begin{proposition}
 		A set K in a topological space X is closed if and only if K contains all its limit points.
 	\end{proposition}
-	\begin{proof}
-	Proposition 2
+	\begin{proof} Suppose K contains all its limit points.
 	\newline
-	Let K = X, then K is closed because $\emptyset$ is open.
+	This is what you had already given
 	\newline
-	Let x $\in$ X$\setminus$K, so x is not a limit point of K.
+	If K = X, then K is closed because $\emptyset$ is open.
 	\newline
-	$\exists \ell \in \mathcal{U}_\ell \in \tau$ such that $\forall$ k $\in$ K besides $\ell$, k $\not\in \mathcal{U}_\ell$
+	Otherwise let x $\in$ X$\setminus$K, so x is not a limit point of K.
 	\newline
-	Therefore, $\mathcal{U}_\ell$ is the compliment of K, so $\mathcal{U}_\ell$ is open.
+	Then, $\exists$ $x \in$ U$_x \in \tau$ such that U$_x \cap$ K = $\emptyset$.
 	\newline
-	$\mathcal{U}_\ell$ = X$\setminus$K
+	So, $x \in $ U$_x \subseteq$ X$\setminus$K.
 	\newline
-	Thus, X$\setminus$K = $\bigcup$ $\lbrace$ $\ell \in \mathcal{U}_\ell$ : $\ell \not\in$ K $\rbrace$ is open. 
+	Thus, $\bigcup \lbrace$U$_x$ : $x \in$ X$\setminus$K$\rbrace \supseteq$ X$\setminus$K and $\bigcup \lbrace$U$_x$ : $x \in$ X$\setminus$K$\rbrace \subseteq$ X$\setminus$K since U$_x \subseteq$ X$\setminus$K.
+	\newline
+	Therefore, $\bigcup \lbrace$U$_x$ : $x \in$ X$\setminus$K$\rbrace$ = X$\setminus$K, so X$\setminus$K is open and K is closed.
 	\end{proof}
+	\begin{proof} Suppose K is closed.
+	\newline
+		Still unsure how to apply the lemma to the double implication...also unsure if I have the lemma correctly in order to even use it in the first place...
+	\end{proof}
+	\begin{proposition}
+	Verify the discrete and indiscrete topologies are topologies
+	\end{proposition}
+	\begin{proof} Prove the discrete topology is an actual topology.
+	\newline\newline
+	The discrete topology on a set X is $\tau$ = $\mathcal{P}($X$)$
+	\newline
+	$\emptyset$, X $\in \mathcal{P}($X$)$, So $\emptyset,$ X $\in \tau$
+	\newline
+	Let U $\in \tau$, or U $\subseteq \mathcal{P}($X$)$, then the $\bigcup$U $\in \mathcal{P}($X$)$ or $\bigcup$U $\in \tau$
+	\newline
+	Let U, V $\in \tau$, then the intersection of U, V is also in $\tau$.
+	\end{proof}
+	\begin{proof} Prove the indiscrete topology is an actual topology.
+	\newline\newline
+	The indiscrete topology on a set X is given as $\tau$ = $\lbrace \emptyset$, X$\rbrace$.
+	\newline
+	Clearly, $\emptyset$, X $\in \tau$.
+	\newline
+	Let $\mathcal{U}$ be a collection of all open sets in X, then the $\bigcup \mathcal{U}$ is also $\in \tau$.
+	\newline
+	Let U, V be open sets in X, then U, V $\in \tau$.
+	\newline
+	Thus the intersection f open sets U, V is also $\in \tau$
+	\end{proof}
+	\begin{proposition}
+	Find a basis for the indiscrete topology on $\mathbb{R}$.
+	\end{proposition}	
+	\begin{proof}
+	Find a basis for the indiscrete topology on $\mathbb{R}$.
+	\newline\newline
+	The indiscrete topology on $\mathbb{R}$ is given as $\tau$ = $\lbrace \emptyset$, $\mathbb{R}\rbrace$
+	\newline
+	A basis on $\mathbb{R}$ is a collection $\mathcal{B} \subseteq \mathcal{P}(\mathbb{R})$ s.t. for each $x \in \mathbb{R}$ $\exists$ B $\in \mathcal{B}$ : $x \in \mathcal{B}$.
+	\newline
+	Let $\mathcal{B}$ = $\mathbb{R}$. Since $\mathcal{B} \subseteq \mathcal{P}(\mathbb{R})$, for each $x \in \mathbb{R}$, there is a subset B $\in \mathcal{B}$ : $x \in \mathcal{B}$.
+	\newline
+	Thus, $x \in \mathcal{B}$ and B is a basis on $\mathbb{R}$.
+	\newline
+	Furthermore, if two sets B$_1$, B$_2$ $\in \mathcal{B}$, then their intersection is also in $\mathcal{B}$. Let $x \in$ B$_1$, B$_2$. Then $x \in$ B$_1 \cap$ B$_2$.
+	\newline
+	B$_1 \cap$ B$_2$ = B$_3$, so B$_3 \in \mathcal{B}$, and $x \in$ B$_3 \subseteq$ B$_1 \cap$ B$_2$.
+	\newline
+	Thus B$_3$ is also a basis on $\mathbb{R}$.
+	\end{proof}
+	
 \end{document}
