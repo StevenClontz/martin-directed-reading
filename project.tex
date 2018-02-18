@@ -5,17 +5,17 @@
 \begin{document}
 
 	\begin{proposition}
-	Puzzle 1: Find an infinite collection of open intervals in $\mathbb{R}$ whose intersection is not an open interval.
+	Find an infinite collection of open intervals in $\mathbb{R}$ whose intersection is not an open interval.
 	\end{proposition}
 	\begin{proof}
-	$\bigcap\lbrace (\frac{-1}{n}, \frac{1}{n}) : n \in \mathbb{Z}^+\rbrace = \lbrace 0 \rbrace$ which is not an open interval or open.
+	$\bigcap\lbrace (\frac{-1}{n}, \frac{1}{n}) : n \in \mathbb{Z}^+\rbrace = \lbrace 0 \rbrace$ which is not an open interval or even open.
 	\end{proof}
 
   \begin{proposition}
       Any finite union of closed sets is closed, and any arbitrary intersection of closed sets is closed.
   \end{proposition}
   \begin{proof}
-  	Proposition 1 - We proceed by showing that any finite union of closed sets is closed:
+	We proceed by showing that any finite union of closed sets is closed:
   	\newline
   	Let C, D be closed sets.
   	\newline
@@ -27,7 +27,7 @@
   	\newline
   	By Demorgan's Law, X$\setminus$(A $\cap$ B) = X$\setminus$A $\cup$ X$\setminus$B = C $\cup$ D which is closed.
   	\newline\newline
-	Now that we've shown that C $\cup$ D is closed for all C, D; Assume C$_1$ $\cup $ C$_2 \cup ...$ $\cup $ C$_n$ is closed for closed sets C$_i$. Then for C$_1$ $\cup$ ... $\cup$ C$_n$ $\cup$ C$_{n+1}$, let K = C$_1$ $\cup$ ... $\cup$ C$_n$. Thus K $\cup$ C$_{n+1}$ = C$_1$ $\cup$ ... $\cup$ C$_n$ $\cup$ C$_{n+1}$ is closed.
+	Now that we've shown that C $\cup$ D is closed for all C, D; Assume C$_1$ $\cup $ C$_2 \cup ...$ $\cup $ C$_n$ is closed for closed sets C$_i$. Then for C$_1$ $\cup$ ... $\cup$ C$_n$ $\cup$ C$_{n+1}$, let K = C$_1$ $\cup$ ... $\cup$ C$_n$.\newline Thus K $\cup$ C$_{n+1}$ = C$_1$ $\cup$ ... $\cup$ C$_n$ $\cup$ C$_{n+1}$ is closed.
 	\newline
 	Now we show that any arbitrary intersection of closed sets is closed.
   	\newline
@@ -49,14 +49,14 @@
 	\end{lemma}
 	\begin{proof} Suppose U is open, then for all x $\in$ U there exists an open U$_x$ = U, such that x $\in$ U$_x \subseteq$ U.
 	\newline
-	To show the converse, for each x $\in$ U there is an open set U$_x$ where x $\in$ U$_x$ $\subseteq$ U. To show that U = $\bigcup \lbrace$ U$_x$ : x $\in$ U $\rbrace$, let x $\in$ U, then for each U$_x$, U $\subseteq$ U$_x$. Thus U $\subseteq$ $\bigcup \lbrace$ U$_x$ : x $\in$ U $\rbrace$. Now let y $\in$ U$_x$ for some x $\in$ U, then U$_x$ $\subseteq$ U. Thus U $\supseteq$ $\bigcup \lbrace$ U$_x$ : x $\in$ U $\rbrace$. Therefore U = $\bigcup \lbrace$ U$_x$ : x $\in$ U $\rbrace$.
+	To show the converse, suppose that for each x $\in$ U there is an open set U$_x$ where x $\in$ U$_x$ $\subseteq$ U. For $x \in U, x \in U_x$ so $x \in \bigcup \lbrace U_x : x \in U \rbrace$. Thus $U \subseteq \bigcup \lbrace U_x : x \in U_x \rbrace$. Now let y $\in$ U$_x$ for some x $\in$ U, then U$_x$ $\subseteq$ U. Thus U $\supseteq$ $\bigcup \lbrace$ U$_x$ : x $\in$ U $\rbrace$. Therefore U = $\bigcup \lbrace$ U$_x$ : x $\in$ U $\rbrace$.
 	\end{proof}
 
 	\begin{proposition}
 		A set K in a topological space X is closed if and only if K contains all its limit points.
 	\end{proposition}
 	\begin{proof} Suppose K contains all its limit points.
-	If K = X, then K is closed because $\emptyset$ is open.	Otherwise let x $\in$ X$\setminus$K, so x is not a limit point of K.	Then, $\exists$ $x \in$ U$_x \in \tau$ such that U$_x \cap$ K = $\emptyset$.	So, $x \in $ U$_x \subseteq$ X$\setminus$K.	By the lemma, X$\setminus$K is open so K is closed.
+	If K = X, then K is closed because $\emptyset$ is open.	Otherwise let x $\in$ X$\setminus$K, so x is not a limit point of K.	Then, $\exists$ $x \in$ U$_x \in \tau$ such that U$_x \cap$ K = $\emptyset$ since $x \not\in K$.	So, $x \in $ U$_x \subseteq$ X$\setminus$K.	By the lemma, X$\setminus$K is open so K is closed.
 
 	To show the converse is true as well, let x $\in$ X$\setminus$K, which is an open set by the lemma. Since $($X$\setminus$K$)\cap$K is the empty set, x is not a limit point of K. So, if $\ell$ is any limit point of K, then $\ell \not\in$ X$\setminus$K, so $\ell \in$ K and K contains all of its limit points.
 	\end{proof}
@@ -93,28 +93,28 @@
 \end{theorem}
 
 	\begin{theorem}
-	If $\mathcal{B}$ is a basis for $\tau$, then $\tau$ = $\lbrace \bigcup \mathcal{B}^{'}$ : $\mathcal{B}^{'} \in \mathcal{B} \rbrace$. (Every open set is a union of basic sets)
+	If $\mathcal{B}$ is a basis for $\tau$, then $\tau$ = $\lbrace \bigcup \mathcal{B}^{'}$ : $\mathcal{B}^{'} \subseteq \mathcal{B} \rbrace$. (Every open set is a union of basic sets)
 	\end{theorem}
 	\begin{proof}
-	Let $\mathcal{B} \subseteq \tau$, then for any $\mathcal{B}^{'} \in \mathcal{B}$, $\mathcal{B}^{'} \in \tau$. Furthermore the $\bigcup \mathcal{B}^{'}$ = $\mathcal{B}$, then $\bigcup \mathcal{B}^{'} \subseteq \tau$ and $\bigcup \mathcal{B}^{'}$ = $\tau$.
+	Let $\mathcal{B} \subseteq \tau$, then for any $\mathcal{B}^{'} \subseteq \mathcal{B}$, $\mathcal{B}^{'} \in \tau$. Thus $\tau = \lbrace \bigcup \mathcal{B}^{'} : \mathcal{B}^{'} \subseteq \mathcal{B} \rbrace$.
 	\end{proof}
 
 	\begin{theorem}
 	$\lbrace\mathbb{X}\rbrace$ is a basis for $\tau$ = $\lbrace\emptyset$, $\mathbb{X}\rbrace$. (indiscrete)
 	\end{theorem}
 	\begin{proof}
-	$\mathbb{X}$ $\in \lbrace \emptyset$, $\mathbb{X}\rbrace$ = $\tau$. First, let U = $\mathbb{X} \in \tau$, and let x $\in$ U $\in \tau$, then for all x $\in$ U, x $\in \mathbb{X}$, and for some X$_n \in \mathbb{X}$, x $\in$ X$_n$. Thus, x $\in$ X$_n \subseteq$ U $\in \tau$. Now, we let x $\in$ X$_1$, X$_2$. Then x $\in ($X$_1 \cap $X$_2)$. Let X$_3 \subseteq ($X$_1 \cap $X$_2)$ such that X$_3$ = $($X$_1 \cap$ X$_2)$ then x $\in$ X$_3$. Thus, x $\in$ X$_3 \subseteq ($X$_1 \cap $X$_2) \in \mathbb{X}$. Then $\lbrace \mathbb{X} \rbrace$ is a basis for $\tau$ = $\lbrace \emptyset$, $\mathbb{X} \rbrace$.
+	Let $\mathcal{B} = \mathbb{X}$ and let $x \in \mathbb{X}$ so $x \in \mathcal{B}$. Then there is $B \subseteq \mathcal{B}$ such that $x \in B$. Now consider $B_1, B_2 \in \mathcal{B}$. $B_1 = \mathbb{X}$ and $B_2 = \mathbb{X}$ Let $x \in B_1 \cap B_2$ and let $B_3 \subseteq B_1 \cap B_2$, then $x \in B_3 = \mathbb{X}$
 	\end{proof}
 
 	\begin{theorem}
-	$\lbrace\lbrace$X$\rbrace$ : x $\in$ X$\rbrace$ is a basis for $\tau$ = $\mathcal{P}($X$)$ = $\lbrace$ U : U $\subseteq$ X$\rbrace$. (discrete)
+	$\lbrace\lbrace x \rbrace$ : x $\in$ X$\rbrace$ is a basis for $\tau$ = $\mathcal{P}($X$)$ = $\lbrace$ U : U $\subseteq$ X$\rbrace$. (discrete)
 	\end{theorem}
 	\begin{proof}
-	The $\bigcup \lbrace$ U : U $\subseteq \mathbb{X} \rbrace$ = $\mathbb{X}$, so for all x $\in$ U, x $\in \mathbb{X} \in \tau$. So, there exists X $\subseteq \mathbb{X}$ such that x $\in$ X, thus x $\in$ X $\subseteq \mathbb{X} \in \tau$. Again, the $\bigcup \lbrace$ U : U $\subseteq \mathbb{X} \rbrace$ = $\mathbb{X}$, so let x $\in$ X$_1$, X$_2 \subseteq \mathbb{X}$ then x $\in \mathbb{X}$, and x $\in ($X$_1 \cap$ X$_2)$ = X$_3$. X$_3$ = $($X$_1 \cap$ X$_2) \subseteq \mathbb{X}$, so X$_3 \in \mathbb{X}$ with x $\in$ X$_3 \subseteq ($X$_1 \cap$ X$_2) \subseteq \mathbb{X} \in \tau$.
+	Let $x \in U \in \tau = \mathcal{P}(\mathbb{X})$. Then for $B = \lbrace x \rbrace \in \mathcal{B}, x \in B \subseteq U$. Let $B_1, B_2 \in \mathcal{B}$. Then $B_1 = \lbrace x \rbrace$ and $B_2 = \lbrace y \rbrace$.
 	\end{proof}
 
 	\begin{definition}
-	The Euclidean topology on $\mathbb{R}$ is the topology generated by the basis $\lbrace($a, b$)$ : a $<$ b are in $\mathbb{R}\rbrace$.
+	The Euclidean topology on $\mathbb{R}$ is the topology generated by the basis \newline $\lbrace(a, b) : a < b \in \mathbb{R}\rbrace$.
 	\end{definition}
 
 	\begin{theorem}
