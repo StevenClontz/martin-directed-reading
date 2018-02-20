@@ -110,7 +110,7 @@
 	$\lbrace\lbrace x \rbrace$ : x $\in$ X$\rbrace$ is a basis for $\tau$ = $\mathcal{P}($X$)$ = $\lbrace$ U : U $\subseteq$ X$\rbrace$. (discrete)
 	\end{theorem}
 	\begin{proof}
-	Let $x \in U \in \tau = \mathcal{P}(\mathbb{X})$. Then for $B = \lbrace x \rbrace \in \mathcal{B}, x \in B \subseteq U$. Let $B_1, B_2 \in \mathcal{B}$. Then $B_1 = \lbrace x \rbrace$ and $B_2 = \lbrace y \rbrace$.
+	Let $x \in U \in \tau = \mathcal{P}(\mathbb{X})$. Then for $B = \lbrace x \rbrace \in \mathcal{B}, x \in B \subseteq U$. Let $B_1, B_2 \in \mathcal{B}$. Then $B_1 = \lbrace x \rbrace$ and $B_2 = \lbrace x \rbrace$. Let $y \in B_1 \cap B_2$ and let $B_3 \subseteq B_1 \cap B_2$, then $y \in B_3 = \lbrace x \rbrace$ so $\lbrace y \rbrace = \lbrace x \rbrace$.
 	\end{proof}
 
 	\begin{definition}
@@ -121,12 +121,14 @@
 	$\lbrace($a, b$)$ : a $<$ b $\in \mathbb{R}\rbrace$ is a basis.
 	\end{theorem}
 	\begin{proof}
+	Let $\mathcal{B} = \lbrace (a, b) : a < b \in \mathbb{R} \rbrace$ and let $(a, b) \in \mathbb{R}$ so $(a, b) \in \mathcal{B}$. Then there is $B \subseteq \mathcal{B}$ such that $(a, b) \in B$. Now consider $B_1, B_2 \in \mathcal{B}$. $B_1 = \mathcal{B}$ and $B_2 = \mathcal{B}$. Let $(a, b) \in B_1 \cap B_2$ and let $B_3 \subseteq B_1 \cap B_2$, then $(a, b) \in B_3 = \mathcal{B}$.
 	\end{proof}
 
 	\begin{theorem}
 	$\lbrace($a, b$)$ : a $<$ b $\in \mathbb{Q}\rbrace$ is a basis for the Euclidean topology.
 	\end{theorem}
 	\begin{proof}
+	By the same argument as above this also holds true because $\lbrace (a, b) : a < b \in \mathbb{Q} \rbrace$ also contains all of the $(a', b') \in \mathbb{R}$.
 	\end{proof}
 
 \end{document}
