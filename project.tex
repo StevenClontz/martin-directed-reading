@@ -126,4 +126,53 @@
 	Let $\mathcal{B} = \lbrace (a, b) : a<b \in \mathbb{Q}\rbrace$. Let $x$, $y \in \mathbb{Q}$ and let $B = (x-y, x+y)$, so $B \subseteq \mathbb{Q}$ and $x \in B \in \mathcal{B}$. Now, for $B_1, B_2 \in \mathcal{B}, \exists x \in B_1 \cap B_2 : x \in B_1$ and $x \in B_2$. $a_1, a_2 < b_1, b_2 \in \mathbb{Q}.$ Let $B_1 = (a_1, b_1)$ and $B_2 = (a_2, b_2)$. Now let $B_3 = (max(a_1,a_2), min(b_1,b_2))$ with $a_1,a_2<x<b_1,b_2 \in \mathcal{B}$. So, $x \in B_3 \subseteq B_1 \cap B_2$.
 	\end{proof}
 
+	\begin{definition}
+	  A subset \(K\) of a topological space \(X\) is said to be \textbf{compact} if for every
+	  open cover \(\mathcal U\) of \(K\) (every collection \(\mathcal U\) of open sets
+	  such that \(\bigcup \mathcal U=K\)) there exists a finite subcollection
+	  \(\mathcal F\subseteq \mathcal U\) that also covers \(K\) (that is,
+	  \(\bigcup\mathcal F=K\)).
+	\end{definition}
+
+	\begin{theorem}
+	  Any finite union of compact subsets is compact.
+	\end{theorem}
+
+	\begin{proposition}
+	  Any finite subset of a topological space is compact.
+	\end{proposition}
+
+	\begin{proposition}
+	  The subset \(\{0\}\cup\{\frac{1}{n}:n\in\mathbb Z^+\}\) of \(\mathbb R\) is compact.
+	\end{proposition}		
+
+	\begin{proposition}
+	  Any unbounded subset of \(\mathbb R\) is not compact.
+	\end{proposition}
+
+	\begin{proposition}
+	  Any open interval \((a,b)\subseteq\mathbb R\) is not compact.
+	\end{proposition}
+
+	\begin{definition}
+	  A subset \(K\) of a topological space \(X\) is said to be \textbf{Lindel\"of} if for every
+	  open cover \(\mathcal U\) of \(K\) (every collection \(\mathcal U\) of open sets
+	  such that \(\bigcup \mathcal U=K\)) there exists a countable subcollection
+	  \(\mathcal F\subseteq \mathcal U\) that also covers \(K\) (that is,
+	  \(\bigcup\mathcal F=K\)).
+	\end{definition}
+
+	\begin{definition}
+	  A subset \(K\) of a topological space \(X\) is said to be \textbf{\(\sigma\)-compact} if
+	  there exist compact subspaces \(K_n\) of \(X\) for \(n\in\mathbb N\) such that
+	  \(K=\bigcup_{n\in\mathbb N} K_n\).
+	\end{definition}
+	
+	\begin{definition}
+	  A subset \(K\) of a topological space \(X\) is said to be \textbf{hemicompact} if
+	  there exist compact subspaces \(K_n\) of \(X\) for \(n\in\mathbb N\) such that
+	  \(K=\bigcup_{n\in\mathbb N} K_n\), and for every compact subset \(H\subseteq K\),
+	  \(H\subseteq K_n\) for some \(n\in\mathbb N\).
+	\end{definition}
+	
 \end{document}
