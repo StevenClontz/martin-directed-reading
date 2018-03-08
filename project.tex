@@ -105,7 +105,7 @@
 	$\lbrace\lbrace x \rbrace$ : x $\in$ X$\rbrace$ is a basis for $\tau$ = $\mathcal{P}($X$)$ = $\lbrace$ U : U $\subseteq$ X$\rbrace$. (discrete)
 	\end{theorem}
 	\begin{proof}
-	Let $x \in U \in \tau = \mathcal{P}(\mathbb{X})$. Then for $B = \lbrace x \rbrace \in \mathcal{B}, x \in B \subseteq U$. Let $B_1, B_2 \in \mathcal{B}$. Let $y \in B_1 \cap B_2$ so $B_1 = B_2 = \lbrace y \rbrace$. Let $B_3 = \lbrace y \rbrace$ so $y \in B_3 = \lbrace y \rbrace \subseteq B_1 \cap B_2 = \lbrace y \rbrace$. 
+	Let $x \in U \in \tau = \mathcal{P}(\mathbb{X})$. Then for $B = \lbrace x \rbrace \in \mathcal{B}, x \in B \subseteq U$. Let $B_1, B_2 \in \mathcal{B}$. Let $y \in B_1 \cap B_2$ so $B_1 = B_2 = \lbrace y \rbrace$. Let $B_3 = \lbrace y \rbrace$ so $y \in B_3 = \lbrace y \rbrace \subseteq B_1 \cap B_2 = \lbrace y \rbrace$.
 	\end{proof}
 
 	\begin{definition}
@@ -129,15 +129,15 @@
 	\begin{definition}
 	  A subset \(K\) of a topological space \(X\) is said to be \textbf{compact} if for every
 	  open cover \(\mathcal U\) of \(K\) (every collection \(\mathcal U\) of open sets
-	  such that \(\bigcup \mathcal U=K\)) there exists a finite subcollection
+	  such that \(\bigcup \mathcal U\supseteq K\)) there exists a finite subcollection
 	  \(\mathcal F\subseteq \mathcal U\) that also covers \(K\) (that is,
-	  \(\bigcup\mathcal F=K\)).
+	  \(\bigcup\mathcal F\supseteq K\)).
 	\end{definition}
 
 	\begin{theorem}
 	  Any finite union of compact subsets is compact.
 	\end{theorem}
-	
+
 	\begin{proof}
 	By definition if $K_1$ and $K_2$ are compact then for each $\mathcal{U}_1$ and $\mathcal{U}_2$ of $K_1$ and $K_2$ such that $\bigcup \mathcal{U}_1 = K_1$ and $\bigcup \mathcal{U}_2 = K_2$. So, $\bigcup (\mathcal{U}_1 \cup \mathcal{U}_2) = K_1 \cup K_2$. Let $K_3 = K_1 \cup K_2$ and $\mathcal{U}_3 = \mathcal{U}_1 \cup \mathcal{U}_2$. Then for $K_3$ there exists $\mathcal{U}_3$ such that $\bigcup \mathcal{U}_3 = K_3$. \newline Also by definition there must exist $\mathcal{F}_1$ and $\mathcal{F}_2$ such that $\mathcal{F}_1, \mathcal{F}_2 \subseteq \mathcal{U}_1, \mathcal{U}_2$ respectively. Then, $\mathcal{F}_1$ and $\mathcal{F}_2 \subseteq \mathcal{U}_1 \cup \mathcal{U}_2$. Let $\mathcal{F}_3 = \mathcal{F}_1 \cup \mathcal{F}_2$, then $\mathcal{F}_3 \subseteq \mathcal{U}_3$. Now observe that $\bigcup \mathcal{F}_1 = K_1$ and $\bigcup \mathcal{F}_2 = K_2$. The $\bigcup (\mathcal{F}_1 \cup \mathcal{F}_2 ) = K_1 \cup K_2$ and $\bigcup \mathcal{F}_3 = K_1 \cup K_2$ so $K_1 \cup K_2$ must be compact.
 	\end{proof}
@@ -145,21 +145,21 @@
 	\begin{proposition}
 	  Any finite subset of a topological space is compact.
 	\end{proposition}
-	
+
 	\begin{proof}
-	
+
 	A subset $K$ of space $\mathbb{X}$ is compact if for every open cover $\mathcal{U}$ of $K$ there exists $\mathcal{F} \subseteq \mathcal{U}$ such that $\bigcup \mathcal{F} = K$.\newline Let $K \subseteq \mathbb{X}$, let $\mathcal{U} = \lbrace (a, b) : a < b \in K \rbrace$ then $\bigcup \mathcal{U} = K$. Let $\mathcal{F} = \lbrace F : F = U \in \mathcal{U} \rbrace$, then $\bigcup \mathcal{F} = \bigcup \mathcal{U} = K$, so $\bigcup \mathcal{F} = K$.
-	
+
 	\end{proof}
 
 	\begin{proposition}
 	  The subset \(\{0\}\cup\{\frac{1}{n}:n\in\mathbb Z^+\}\) of \(\mathbb R\) is compact.
-	\end{proposition}		
+	\end{proposition}
 
 	\begin{proof}
 
 	Assume $K$ is compact, then for all $\mathcal{U}$ of $K$, $\bigcup \mathcal{U} = K$. Now we find $\mathcal{F} \subseteq \mathcal{U}$ that also covers $K$. For $\bigcup \mathcal{U} = K$, then $0, 1 \in \bigcup \mathcal{U}$. Let $\mathbb{A} = \bigcap \lbrace (\frac{-1}{n}, \frac{1}{n}) : n \in \mathbb{Z}^+ \rbrace$ and let $\mathbb{C} = \lbrace \frac{1}{n} : n \in \mathbb{Z}^+$. So $\mathbb{A} \subseteq \mathcal{U}$ and $\mathbb{C} \subseteq \mathcal{U}$ so $\mathbb{A} \cup \mathbb{C} \subseteq \mathcal{U}$, let $\mathcal{F} = \mathbb{A} \cup \mathbb{C}$, then $\bigcup \mathcal{F} = \bigcup( \lbrace 0 \rbrace \cup \lbrace \frac{1}{n} : n \in \mathbb{Z}^+ \rbrace)$ so $\bigcup \mathcal{F} = K$.
-	
+
 	\end{proof}
 
 	\begin{proposition}
@@ -173,9 +173,9 @@
 	\begin{definition}
 	  A subset \(K\) of a topological space \(X\) is said to be \textbf{Lindel\"of} if for every
 	  open cover \(\mathcal U\) of \(K\) (every collection \(\mathcal U\) of open sets
-	  such that \(\bigcup \mathcal U=K\)) there exists a countable subcollection
+	  such that \(\bigcup \mathcal U\supseteq K\)) there exists a countable subcollection
 	  \(\mathcal F\subseteq \mathcal U\) that also covers \(K\) (that is,
-	  \(\bigcup\mathcal F=K\)).
+	  \(\bigcup\mathcal F\supseteq K\)).
 	\end{definition}
 
 	\begin{definition}
@@ -183,12 +183,12 @@
 	  there exist compact subspaces \(K_n\) of \(X\) for \(n\in\mathbb N\) such that
 	  \(K=\bigcup_{n\in\mathbb N} K_n\).
 	\end{definition}
-	
+
 	\begin{definition}
 	  A subset \(K\) of a topological space \(X\) is said to be \textbf{hemicompact} if
 	  there exist compact subspaces \(K_n\) of \(X\) for \(n\in\mathbb N\) such that
 	  \(K=\bigcup_{n\in\mathbb N} K_n\), and for every compact subset \(H\subseteq K\),
 	  \(H\subseteq K_n\) for some \(n\in\mathbb N\).
 	\end{definition}
-	
+
 \end{document}
