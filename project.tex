@@ -97,15 +97,21 @@
 	\begin{theorem}
 	$\lbrace\mathbb{X}\rbrace$ is a basis for $\tau$ = $\lbrace\emptyset$, $\mathbb{X}\rbrace$. (indiscrete)
 	\end{theorem}
-	\begin{proof}
-	Let $\mathcal{B} = \lbrace\mathbb{X}\rbrace$ and let $x \in \mathbb{X} = B \in \mathcal{B}$. Now consider $B_1, B_2 \in \mathcal{B}$. $B_1 = \mathbb{X}$ and $B_2 = \mathbb{X}$ Let $x \in B_1 \cap B_2$, then $x \in B_3 = \mathbb{X} : B_1 \cap B_2 = X$.
+	\begin{proof}:\newline
+	\begin{enumerate}
+		\item Let $\mathcal{B} = \lbrace\mathbb{X}\rbrace$ and let $x \in \mathbb{X} = B \in \mathcal{B}$.
+		\item Now consider $B_1, B_2 \in \mathcal{B}$. $B_1 = \mathbb{X}$ and $B_2 = \mathbb{X}$ Let $x \in B_1 \cap B_2$, then $x \in B_3 = \mathbb{X} : B_1 \cap B_2 = X$.
+	\end{enumerate}
 	\end{proof}
 
 	\begin{theorem}
 	$\lbrace\lbrace x \rbrace$ : x $\in$ X$\rbrace$ is a basis for $\tau$ = $\mathcal{P}($X$)$ = $\lbrace$ U : U $\subseteq$ X$\rbrace$. (discrete)
 	\end{theorem}
-	\begin{proof}
-	Let $x \in U \in \tau = \mathcal{P}(\mathbb{X})$. Then for $B = \lbrace x \rbrace \in \mathcal{B}, x \in B \subseteq U$. Let $B_1, B_2 \in \mathcal{B}$. Let $y \in B_1 \cap B_2$ so $B_1 = B_2 = \lbrace y \rbrace$. Let $B_3 = \lbrace y \rbrace$ so $y \in B_3 = \lbrace y \rbrace \subseteq B_1 \cap B_2 = \lbrace y \rbrace$. 
+	\begin{proof}:\newline
+		\begin{enumerate}
+			\item Let $x \in U \in \tau = \mathcal{P}(\mathbb{X})$. Then for $B = \lbrace x \rbrace \in \mathcal{B}, x \in B \subseteq U$.
+			\item Let $B_1, B_2 \in \mathcal{B}$. Let $y \in B_1 \cap B_2$ so $B_1 = B_2 = \lbrace y \rbrace$. Let $B_3 = \lbrace y \rbrace$ so $y \in B_3 = \lbrace y \rbrace \subseteq B_1 \cap B_2 = \lbrace y \rbrace$. 
+		\end{enumerate}
 	\end{proof}
 
 	\begin{definition}
@@ -115,15 +121,21 @@
 	\begin{theorem}
 	$\lbrace($a, b$)$ : a $<$ b $\in \mathbb{R}\rbrace$ is a basis.
 	\end{theorem}
-	\begin{proof}
-	Let $\mathcal{B} = \lbrace (a, b) : a < b \in \mathbb{R} \rbrace$. Let $x \in \mathbb{R}$ and let $B = (x-1, x+1)$, then $B \subseteq \mathbb{R}$ and $B \in \mathcal{B}$. \newline For $B_1 = (a_1, b_1)$, $B_2 = (a_2, b_2)$, $a_1<b_1$, $a_2<b_2 \in \mathbb{R}$ with $x \in B_1 \cap B_2$, then there is $B_3 = ( max(a_1, a_2), min(b_1, b_2) ) \subseteq B_1 \cap B_2$ such that $a_1,a_2<x<b_1,b_2 \in B_3$.\newline\newline\newline\newline\newline
+	\begin{proof}:\newline
+		\begin{enumerate}
+			\item Let $\mathcal{B} = \lbrace (a, b) : a < b \in \mathbb{R} \rbrace$. Let $x \in \mathbb{R}$ and let $B = (x-1, x+1)$, then $B \subseteq \mathbb{R}$ and $B \in \mathcal{B}$.	
+			\item For $B_1 = (a_1, b_1)$, $B_2 = (a_2, b_2)$, $a_1<b_1$, $a_2<b_2 \in \mathbb{R}$ with $x \in B_1 \cap B_2$, then there is $B_3 = ( max(a_1, a_2), min(b_1, b_2) ) \subseteq B_1 \cap B_2$ such that $a_1,a_2<x<b_1,b_2 \in B_3$.
+		\end{enumerate}
 	\end{proof}
 
 	\begin{theorem}
 	$\lbrace($a, b$)$ : a $<$ b $\in \mathbb{Q}\rbrace$ is a basis for the Euclidean topology.
 	\end{theorem}
-	\begin{proof}
-	Let $\mathcal{B} = \lbrace (a, b) : a<b \in \mathbb{Q}\rbrace$. Let $x$, $y \in \mathbb{Q}$ and let $B = (x-y, x+y)$, so $B \subseteq \mathbb{Q}$ and $x \in B \in \mathcal{B}$. Now, for $B_1, B_2 \in \mathcal{B}, \exists x \in B_1 \cap B_2 : x \in B_1$ and $x \in B_2$. $a_1, a_2 < b_1, b_2 \in \mathbb{Q}.$ Let $B_1 = (a_1, b_1)$ and $B_2 = (a_2, b_2)$. Now let $B_3 = (max(a_1,a_2), min(b_1,b_2))$ with $a_1,a_2<x<b_1,b_2 \in \mathcal{B}$. So, $x \in B_3 \subseteq B_1 \cap B_2$.
+	\begin{proof}:\newline
+		\begin{enumerate}
+		\item Let $\mathcal{B} = \lbrace (a, b) : a<b \in \mathbb{Q}\rbrace$. Let $x$, $y \in \mathbb{Q}$ and let $B = (x-y, x+y)$, so $B \subseteq \mathbb{Q}$ and $x \in B \in \mathcal{B}$.
+		\item Now, for $B_1, B_2 \in \mathcal{B}, \exists x \in B_1 \cap B_2 : x \in B_1$ and $x \in B_2$. $a_1, a_2 < b_1, b_2 \in \mathbb{Q}.$ Let $B_1 = (a_1, b_1)$ and $B_2 = (a_2, b_2)$. Now let $B_3 = (max(a_1,a_2), min(b_1,b_2))$ with $a_1,a_2<x<b_1,b_2$ so $x \in B_3$. So, $x \in B_3 \subseteq B_1 \cap B_2$.
+		\end{enumerate} 
 	\end{proof}
 
 	\begin{definition}
