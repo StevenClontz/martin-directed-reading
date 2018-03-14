@@ -86,6 +86,7 @@
 	\begin{proof}
 	$\tau$ is $\lbrace \bigcup \mathcal{B}' : \mathcal{B}' \subseteq \mathcal{B} \rbrace$. So $\lbrace \bigcup \mathcal{B}' : \mathcal{B}' \subseteq \mathcal{B} \rbrace \subseteq \mathcal{P}(X)$. $\emptyset, X \in \tau$ because for $\mathcal{B}' = \emptyset, \bigcup \mathcal{B}' = \emptyset$ and for $\mathcal{B}' = X, \bigcup \mathcal{B}' = X$. Let $\mathcal{U} \subseteq \tau$ and $\bigcup \mathcal{U} \in \tau$ because for each $U \in \mathcal{U}, U = \bigcup \mathcal{B}_{U}'$ for some $\mathcal{B}_{U}' \subseteq \mathcal{B}$ So, $\bigcup \mathcal{U} = \bigcup \lbrace \bigcup \mathcal{B}_{U}' : U \in \mathcal{U} \rbrace$. Let $\mathcal{B}' = \bigcup \lbrace \mathcal{B}_{U}' : U \in \mathcal{U} \rbrace.$ So, $\bigcup \mathcal{U} = \bigcup \mathcal{B}'.$ \newline For $U, V \in \lbrace \bigcup \mathcal{B}' : \mathcal{B}' \subseteq \mathcal{B} \rbrace, U = B_1$ and $V = B_2, B_1, B_2 \in \mathcal{B}$ such that $B_1 = \mathcal{B}$ and $B_2 = \mathcal{B}$. Then $U \cap V \in \lbrace \bigcup \mathcal{B}' : \mathcal{B}' \subseteq \mathcal{B} \rbrace \supseteq W$ so there exists $x \in V, U : x \in U \cap V \supseteq W$. Therefore $x \in W \subseteq U \cap V \in \tau$.
 	\end{proof}
+
 	\begin{theorem}
 	Let $\tau$ be a topology on X. Then $\mathcal{B} \subseteq \tau$ generates $\tau$ if:
 	\newline
@@ -93,6 +94,12 @@
 	\newline
 	2. For all B$_1$, B$_2 \in \mathcal{B}$ with x $\in ($B$_1 \cap$ B$_2)$, there exists B$_3 \in \mathcal{B}$ with x $\in$ B$_3 \subseteq$ B$_1 \cap$ B$_2$.
 \end{theorem}
+\begin{proof}:\newline
+	\begin{enumerate}
+		\item For $x \in U \in \tau$, let $B = \lbrace x \rbrace$, so $x \in B \subseteq U \in \tau$.
+		\item $B_1, B_2 \in \mathcal{B}$. Let $B_3 = (B_1 \cap B_2)$, so $B_3 \subseteq (B_1 \cap B_2)$. Since $x \in (B_1 \cap B_2)$, $x \in B_3$. Thus, $x \in B_3 \subseteq (B_1 \cap B_2)$.
+	\end{enumerate}
+\end{proof}
 
 	\begin{theorem}
 	$\lbrace\mathbb{X}\rbrace$ is a basis for $\tau$ = $\lbrace\emptyset$, $\mathbb{X}\rbrace$. (indiscrete)
@@ -105,18 +112,13 @@
 	\end{proof}
 
 	\begin{theorem}
-	$\lbrace\lbrace x \rbrace$ : x $\in$ X$\rbrace$ is a basis for $\tau$ = $\mathcal{P}($X$)$ = $\lbrace$ U : U $\subseteq$ X$\rbrace$. (discrete)
+	$\lbrace\lbrace x \rbrace$ : x $\in \mathbb{X}\rbrace$ is a basis for $\tau$ = $\mathcal{P}(\mathbb{X})$ = $\lbrace$ U : U $\subseteq \mathbb{X} \rbrace$. (discrete)
 	\end{theorem}
-<<<<<<< HEAD
 	\begin{proof}:\newline
 		\begin{enumerate}
 			\item Let $x \in U \in \tau = \mathcal{P}(\mathbb{X})$. Then for $B = \lbrace x \rbrace \in \mathcal{B}, x \in B \subseteq U$.
 			\item Let $B_1, B_2 \in \mathcal{B}$. Let $y \in B_1 \cap B_2$ so $B_1 = B_2 = \lbrace y \rbrace$. Let $B_3 = \lbrace y \rbrace$ so $y \in B_3 = \lbrace y \rbrace \subseteq B_1 \cap B_2 = \lbrace y \rbrace$. 
 		\end{enumerate}
-=======
-	\begin{proof}
-	Let $x \in U \in \tau = \mathcal{P}(\mathbb{X})$. Then for $B = \lbrace x \rbrace \in \mathcal{B}, x \in B \subseteq U$. Let $B_1, B_2 \in \mathcal{B}$. Let $y \in B_1 \cap B_2$ so $B_1 = B_2 = \lbrace y \rbrace$. Let $B_3 = \lbrace y \rbrace$ so $y \in B_3 = \lbrace y \rbrace \subseteq B_1 \cap B_2 = \lbrace y \rbrace$.
->>>>>>> d1ea925b24540cc0e7469cb55016ec2640f15e2d
 	\end{proof}
 
 	\begin{definition}
@@ -129,7 +131,7 @@
 	\begin{proof}:\newline
 		\begin{enumerate}
 			\item Let $\mathcal{B} = \lbrace (a, b) : a < b \in \mathbb{R} \rbrace$. Let $x \in \mathbb{R}$ and let $B = (x-1, x+1)$, then $B \subseteq \mathbb{R}$ and $B \in \mathcal{B}$.	
-			\item For $B_1 = (a_1, b_1)$, $B_2 = (a_2, b_2)$, $a_1<b_1$, $a_2<b_2 \in \mathbb{R}$ with $x \in B_1 \cap B_2$, then there is $B_3 = ( max(a_1, a_2), min(b_1, b_2) ) \subseteq B_1 \cap B_2$ such that $a_1,a_2<x<b_1,b_2 \in B_3$.
+			\item For $B_1 = (a_1, b_1)$, $B_2 = (a_2, b_2)$, $a_1<b_1$, $a_2<b_2 \in \mathbb{R}$ with $x \in B_1 \cap B_2$, then there is $B_3 = ( max(a_1, a_2), min(b_1, b_2) ) \subseteq B_1 \cap B_2$ such that $a_1,a_2<x<b_1,b_2$ so $ x \in B_3$.
 		\end{enumerate}
 	\end{proof}
 
@@ -156,7 +158,7 @@
 	\end{theorem}
 
 	\begin{proof}
-	By definition if $K_1$ and $K_2$ are compact then for each $\mathcal{U}_1$ and $\mathcal{U}_2$ of $K_1$ and $K_2$ such that $\bigcup \mathcal{U}_1 = K_1$ and $\bigcup \mathcal{U}_2 = K_2$. So, $\bigcup (\mathcal{U}_1 \cup \mathcal{U}_2) = K_1 \cup K_2$. Let $K_3 = K_1 \cup K_2$ and $\mathcal{U}_3 = \mathcal{U}_1 \cup \mathcal{U}_2$. Then for $K_3$ there exists $\mathcal{U}_3$ such that $\bigcup \mathcal{U}_3 = K_3$. \newline Also by definition there must exist $\mathcal{F}_1$ and $\mathcal{F}_2$ such that $\mathcal{F}_1, \mathcal{F}_2 \subseteq \mathcal{U}_1, \mathcal{U}_2$ respectively. Then, $\mathcal{F}_1$ and $\mathcal{F}_2 \subseteq \mathcal{U}_1 \cup \mathcal{U}_2$. Let $\mathcal{F}_3 = \mathcal{F}_1 \cup \mathcal{F}_2$, then $\mathcal{F}_3 \subseteq \mathcal{U}_3$. Now observe that $\bigcup \mathcal{F}_1 = K_1$ and $\bigcup \mathcal{F}_2 = K_2$. The $\bigcup (\mathcal{F}_1 \cup \mathcal{F}_2 ) = K_1 \cup K_2$ and $\bigcup \mathcal{F}_3 = K_1 \cup K_2$ so $K_1 \cup K_2$ must be compact.
+		$K_1$ and $K_2$ are compact so $\bigcup \mathcal{U}_1 \supseteq K_1$ and $\mathcal{U}_2 \supseteq K_2$. $\bigcup (\mathcal{U}_1 \cup \mathcal{U}_2) \supseteq K_1 \cup K_2$. $K_3 = K_1 \cup K_2$. Also, for finite $\mathcal{F}_1 \subseteq \mathcal{U}_1$ and $\mathcal{F}_2 \subseteq \mathcal{U}_2, \bigcup \mathcal{F}_1 \supseteq K_1 and \bigcup \mathcal{F}_2 \supseteq K_2$. So, $\bigcup (\mathcal{F}_1 \cup \mathcal{F}_2) \supseteq K_1 \cup K_2$. Thus, $K_1 \cup K_2$ is compact.
 	\end{proof}
 
 	\begin{proposition}
@@ -165,8 +167,7 @@
 
 	\begin{proof}
 
-	A subset $K$ of space $\mathbb{X}$ is compact if for every open cover $\mathcal{U}$ of $K$ there exists $\mathcal{F} \subseteq \mathcal{U}$ such that $\bigcup \mathcal{F} = K$.\newline Let $K \subseteq \mathbb{X}$, let $\mathcal{U} = \lbrace (a, b) : a < b \in K \rbrace$ then $\bigcup \mathcal{U} = K$. Let $\mathcal{F} = \lbrace F : F = U \in \mathcal{U} \rbrace$, then $\bigcup \mathcal{F} = \bigcup \mathcal{U} = K$, so $\bigcup \mathcal{F} = K$.
-
+	As shown previously, when $K$ is compact there is $\mathcal{U}$ such that $\bigcup \mathcal{U} \supseteq K$. Also, there is a finite $\mathcal{F}$ such that $\bigcup \mathcal{F} \supseteq K$. For $F \in \mathcal{F}$, we can find an open covering $\mathcal{U}' \subseteq \mathcal{U}$ such that $\mathcal{U}' \supseteq F$. Also, we can find a finite $\mathcal{F}' \subseteq \mathcal{U}'$ such that $\bigcup \mathcal{F}' \supseteq F$.
 	\end{proof}
 
 	\begin{proposition}
@@ -174,18 +175,23 @@
 	\end{proposition}
 
 	\begin{proof}
-
-	Assume $K$ is compact, then for all $\mathcal{U}$ of $K$, $\bigcup \mathcal{U} = K$. Now we find $\mathcal{F} \subseteq \mathcal{U}$ that also covers $K$. For $\bigcup \mathcal{U} = K$, then $0, 1 \in \bigcup \mathcal{U}$. Let $\mathbb{A} = \bigcap \lbrace (\frac{-1}{n}, \frac{1}{n}) : n \in \mathbb{Z}^+ \rbrace$ and let $\mathbb{C} = \lbrace \frac{1}{n} : n \in \mathbb{Z}^+$. So $\mathbb{A} \subseteq \mathcal{U}$ and $\mathbb{C} \subseteq \mathcal{U}$ so $\mathbb{A} \cup \mathbb{C} \subseteq \mathcal{U}$, let $\mathcal{F} = \mathbb{A} \cup \mathbb{C}$, then $\bigcup \mathcal{F} = \bigcup( \lbrace 0 \rbrace \cup \lbrace \frac{1}{n} : n \in \mathbb{Z}^+ \rbrace)$ so $\bigcup \mathcal{F} = K$.
-
+		$K = \lbrace 0 \rbrace \cup \lbrace \frac{1}{n} : n \in \mathbb{Z}^+ \rbrace$. Let $\mathcal{U} = \lbrace (n, n+1) : -1 < n < 2 \rbrace$. Then $\bigcup \mathcal{U} \supseteq K$. Now, there are clearly finitely many $F \in \mathcal{F} \subseteq \mathcal{U}$ such that $\bigcup \mathcal{F} \supseteq K$.
 	\end{proof}
 
 	\begin{proposition}
 	  Any unbounded subset of \(\mathbb R\) is not compact.
 	\end{proposition}
+	\begin{proof}
+		For a subset to be compact it must be bounded by definition. An unbounded $K \subseteq \mathbb{R}$ cannot be compact because there is no finite $\mathcal{F}$ such that $\bigcup \mathcal{F} \supseteq K$ because $K$ itself is not bound so it is impossible for $\bigcup \mathcal{F} \supseteq K$. Thus $K$ cannot be compact.
+	\end{proof}	
 
 	\begin{proposition}
 	  Any open interval \((a,b)\subseteq\mathbb R\) is not compact.
 	\end{proposition}
+	\begin{proof}
+		By the same argument, an open interval $(a, b)$ is not bounded, and therefore not compact. For every open cover $\mathcal{U}$ of $(a, b)$ has infinitely many $\mathcal{F} \subseteq \mathcal{U}$ such that $\bigcup \mathcal{F} \supseteq (a, b)$. So there are not finitely many $F \in \mathcal{F}$ and $(a, b)$ is not compact.
+	\end{proof}
+
 
 	\begin{definition}
 	  A subset \(K\) of a topological space \(X\) is said to be \textbf{Lindel\"of} if for every
@@ -204,6 +210,10 @@
 	\begin{theorem}
 		Every \(\sigma\)-compact subset of a topological space is Lindel\"of.
 	\end{theorem}
+	\begin{proof}
+		$K_{n \in \mathbb{N}}$ are countable since $\mathbb{N}$ is countable. If $K = \bigcup_{n \in \mathbb{N}} K_n$, then $\bigcup_{n \in \mathbb{N}} K_n \supseteq K$.
+	\end{proof}
+
 
 	\begin{definition}
 	  A subset \(K\) of a topological space \(X\) is said to be \textbf{hemicompact} if
@@ -215,5 +225,8 @@
 	\begin{theorem}
 		Every hemicompact subset of a topological space is \(\sigma\)-compact.
 	\end{theorem}
+	\begin{proof}
+		By definition of $\sigma$-compact, we have compact subspaces $K_n$ such that for $\sigma$-compact $K'$, $K' = \bigcup_{n \in \mathbb{N}} K_n$. Obviously, for any subset $H$ of the hemicompact set $K$, $H \subseteq K_n \subseteq K$ and since $K' = \bigcup_{n \in \mathbb{N}} K_n, H \subseteq K'$.
+	\end{proof}
 
 \end{document}
