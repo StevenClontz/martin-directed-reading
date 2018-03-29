@@ -96,10 +96,10 @@
 \end{theorem}
 \begin{proof}:\newline
 	\begin{enumerate}
-		\item For $x \in \mathbb{X} \in \tau$, select $x \in B \in \mathcal{B}$, so $x \in \mathbb{X}$ and $x \in B$, then $x \in B \subseteq \mathbb{X} \in \tau$.
+		\item For $x \in \mathbb{X} \in \tau$, select $x \in B \subseteq \mathbb{X} \in \tau$, so 1 of definition 6 holds.
 		\item See definition 6-2.
-		\item Let $\mathcal{B'} \subseteq \mathcal{B}$ and $\mathcal{B'} = \mathcal{B}$ ,so $\bigcup \mathcal{B'} = \bigcup \mathcal{B} = \tau$.
-	\end{enumerate}
+		\item Let $U \in \tau$, then for every $B \subseteq U, B \in \mathcal{B}$. Let $\mathcal{B'} = \lbrace B : B \in \mathcal{B} \rbrace$ so $U = \bigcup \mathcal{B'}$. Now let $\mathcal{B'} \subseteq \mathcal{B}$ such that for each $B \in \mathcal{B}, B \in \mathcal{B'}$ so $\bigcup \mathcal{B'} = U$.
+		\end{enumerate}
 \end{proof}
 
 	\begin{theorem}
@@ -109,16 +109,18 @@
 	\begin{enumerate}
 		\item Let $\mathcal{B} = \lbrace\mathbb{X}\rbrace$ and let $x \in \mathbb{X} = B \in \mathcal{B}$.
 		\item Now consider $B_1, B_2 \in \mathcal{B}$. $B_1 = \mathbb{X}$ and $B_2 = \mathbb{X}$ Let $x \in B_1 \cap B_2$, then $x \in B_3 = \mathbb{X} : B_1 \cap B_2 = \mathbb{X}$.
+		\item Choose $\mathcal{B}_\emptyset \subseteq \mathcal{B}$ and $\mathcal{B}_\mathbb{X} \subseteq \mathcal{B}$ where $\bigcup \mathcal{B}_\emptyset = \emptyset$ and $\bigcup \mathcal{B}_\mathbb{X} = \mathbb{X}$, so $\bigcup \mathcal{B} = \tau = \lbrace \emptyset, \mathbb{X} \rbrace$.
 	\end{enumerate}
 	\end{proof}
 
 	\begin{theorem}
-	$\lbrace\lbrace x \rbrace$ : x $\in \mathbb{X}\rbrace$ is a basis for $\tau$ = $\mathcal{P}(\mathbb{X})$ = $\lbrace$ U : U $\subseteq \mathbb{X} \rbrace$. (discrete)
+	$\mathcal{B} = \lbrace\lbrace x \rbrace$ : x $\in \mathbb{X}\rbrace$ is a basis for $\tau$ = $\mathcal{P}(\mathbb{X})$ = $\lbrace$ U : U $\subseteq \mathbb{X} \rbrace$. (discrete)
 	\end{theorem}
 	\begin{proof}:\newline
 		\begin{enumerate}
 			\item Let $x \in U \in \tau = \mathcal{P}(\mathbb{X})$. Then for $B = \lbrace x \rbrace \in \mathcal{B}, x \in B \subseteq U$.
 			\item Let $B_1, B_2 \in \mathcal{B}$. Let $y \in B_1 \cap B_2$. Let $B_3 = \lbrace y \rbrace$ $y \in B_3 = \lbrace y \rbrace \subseteq B_1 \cap B_2$. 
+			\item For every $x \in \mathbb{X}$ there are $B_x \in \mathcal{B}$ so $\bigcup \mathcal{B} = \bigcup \lbrace x : x \in \mathbb{X} \rbrace = \tau = \mathcal{P}(\mathbb{X})$.
 		\end{enumerate}
 	\end{proof}
 
@@ -141,8 +143,9 @@
 	\end{theorem}
 	\begin{proof}:\newline
 		\begin{enumerate}
-		\item Let $\mathcal{B} = \lbrace (a, b) : a < b \in \mathbb{Q}\rbrace$ Let $x \in \mathbb{R}$ then, $\llcorner x \lrcorner -1 < x < \ulcorner x \urcorner + 1$. Let B = $(\llcorner x \lrcorner -1, \ulcorner x \urcorner + 1)$, so $x \in B \in \mathcal{B}$ and $B \subseteq \mathbb{Q}$.
+		\item Let $\mathcal{B} = \lbrace (a, b) : a < b \in \mathbb{Q}\rbrace$ Let $x \in \mathbb{R}$ then, $\lfloor x \rfloor -1 < x < \lceil x \rceil + 1$. Let B = $(\lfloor x \rfloor -1, \lceil x \rceil + 1)$, so $x \in B \in \mathcal{B}$ and $B \subseteq \mathbb{Q}$.
 		\item Now, for $B_1, B_2 \in \mathcal{B}, \exists x \in B_1 \cap B_2 : x \in B_1$ and $x \in B_2$. $a_1, a_2 < b_1, b_2 \in \mathbb{Q}.$ Let $B_1 = (a_1, b_1)$ and $B_2 = (a_2, b_2)$. Now let $B_3 = (max(a_1,a_2), min(b_1,b_2))$ with $a_1,a_2<x<b_1,b_2$ so $x \in B_3$. So, $x \in B_3 \subseteq B_1 \cap B_2$.
+		\item Now show it generates $\tau$...
 		\end{enumerate} 
 	\end{proof}
 
@@ -159,7 +162,7 @@
 	\end{theorem}
 
 	\begin{proof}
-	$K_1$ and $K_2$ are compact, so let $\mathcal{U}_1$ and $\mathcal{U}_2$ be open covers of $K_1$ and$K_2$ respectively. So $\bigcup \mathcal{U}_1 \supseteq K_1$, and $\bigcup \mathcal{U}_2 \supseteq K_2$ and $\bigcup (\mathcal{U}_1 \cup \mathcal{U}_2) \supseteq K_1 \cup K_2$. $K_3 = K_1 \cup K_2$. There is a $\mathcal{U}_3 \supseteq K_3$. So let $\mathcal{U}_1 = \mathcal{U}_3$ and $\mathcal{U}_2 = \mathcal{U}_3$. For finite $\mathcal{F}_3 \subseteq \mathcal{U}_3, \mathcal{F}_3 \supseteq K_3$, so $\mathcal{F}_3 \supseteq K_1 \cup K_2$. Let $\mathcal{F}_1 = \mathcal{F}_3$ and $\mathcal{F}_2 = \mathcal{F}_3$, so $K_1 \cup K_2$ is compact.
+	$K_1$ and $K_2$ are compact, so let $\mathcal{U}_3$ be an open cover of $K_3 = K_1 \cup K_2$. So let $\mathcal{U}_1 = \mathcal{U}_3 \supseteq K_1$ and $\mathcal{U}_2 = \mathcal{U}_3 \supseteq K_2$. Since $K_1, K_2$ are compact choose finite $\mathcal{F}_1 \subseteq \mathcal{U}_1 = \mathcal{U}_3$ and $\mathcal{F}_2 \subseteq \mathcal{U}_2 = \mathcal{U}_3$, so $\bigcup \mathcal{F}_1 \supseteq K_1$ and $\bigcup \mathcal{F}_2 \supseteq K_2$ and $\bigcup (\mathcal{F}_1 \cup \mathcal{F}_2) \supseteq K_3$.
 	\end{proof}
 
 	\begin{proposition}
@@ -167,7 +170,7 @@
 	\end{proposition}
 
 	\begin{proof}
-	For $F = \lbrace x_i : 0 \leq x_i < n \rbrace \subseteq \mathbb{X}$, let $\mathcal{U}$ be an open covering on $F$ so $\bigcup \mathcal{U} \supseteq F$. Then we can find  a finite $\mathcal{F} \subseteq \mathcal{U}$ such that $\bigcup \mathcal{F} \supseteq F$. Suppose $\mathcal{U}_0 = \lbrace x_0 : -1 \leq x_0 < n+1 \rbrace \subseteq \mathcal{U}$ then let $\mathcal{F} = \mathcal{U}_0$, so $\bigcup \mathcal{F} \supseteq F$.
+	For $F = \lbrace x_i : 0 \leq x_i < n \rbrace \subseteq \mathbb{X}$, let $\mathcal{U}$ be an open covering of $F$ so $\bigcup \mathcal{U} \supseteq F$. For each $0 \leq i < n$, let $\mathcal{U}_i \in \mathcal{U}$ satisfy $x_i \in \mathcal{U}_i$. Let finite $\mathcal{F} = \lbrace x_i : x_i \in \mathcal{U}_i \rbrace$, so $\bigcup \mathcal{F} \supseteq F$ and $F$ is compact.
 	\end{proof}
 
 	\begin{proposition}
@@ -175,14 +178,14 @@
 	\end{proposition}
 
 	\begin{proof}
-	Let $K = \lbrace 0 \rbrace \cup \lbrace \frac{1}{n} : n \in \mathbb{Z^+} \rbrace \subseteq \mathbb{R}$ and let $\mathcal{U}$ be an open covering on $K$ such that $\bigcup \mathcal{U} \supseteq K$. So for $\mathcal{U}_0 \subseteq \mathcal{U}, \mathcal{U}_0 = \lbrace n_0 : -1 \leq n_0 \leq 2, n_0 \in \mathbb{Z} \rbrace$. $\bigcup \mathcal{U}_0 \supseteq K$. So, let finite $\mathcal{F} = \mathcal{U}_0$, so $\mathcal{F} \subseteq \mathcal{U}$ and $\mathcal{F} \supseteq K$.
+	Let $K = \lbrace 0 \rbrace \cup \lbrace \frac{1}{n} : n \in \mathbb{Z^+} \rbrace \subseteq \mathbb{R}$ and let $\mathcal{U}$ be an open covering of $K$. We may choose $U_0 \in \mathcal{U}$ where $0 \in U_0$. So pick $a<b \in \mathbb{R}$ where $0 \in (a, b) \subseteq U_0$. Now let finite $F = \lbrace \frac{1}{m} : 0 \leq m < n \rbrace$ so it is compact, and choose $\mathcal{F} \subseteq \mathcal{U}$ with $\bigcup \mathcal{F} \supseteq F \cup U_0$ so $K$ is compact.
 	\end{proof}
 
 	\begin{proposition}
 	  Any unbounded subset of \(\mathbb R\) is not compact.
 	\end{proposition}
 	\begin{proof}
-	For unbounded $K \subseteq \mathbb{R}$ suppose there is an open covering $\mathcal{U}$ on $K$. Then there exists a finite $\mathcal{F} \subseteq \mathcal{U}$ such that $\bigcup \mathcal{F} \supseteq K$. For $\mathcal{F}$ to be finite it must be bounded. So, there is no $\bigcup \mathcal{F} \supseteq K$. Essentially we would need $\mathcal{F} = \lbrace (- \infty , n) : n \in \mathbb{Z^-} \rbrace \cup \lbrace (n-3, \infty) : n \in \mathbb{Z^+} \rbrace$ which is not finite.
+	Let $\mathcal{U} = \lbrace (n-2, n) : n \in \mathbb{Z} \rbrace$. Let $n_i \in \mathbb{Z}$ be arbitrary for $0 \leq i < n$. Then $\mathcal{F} = \lbrace (n_i - 2, n_i) : 0 \leq i < n \rbrace$ is an arbitrary finite sub collection of $\mathcal{U}$. However, $\bigcup \mathcal{F} \not\supseteq K$, for $min(n_i-2: 0 \leq i < n)$ and $max(n_i : 0 \leq i < n)$ we can find a $k \in K : k < min(n_i-2: 0 \leq i < n)$ or $k > max(n_i : 0 \leq i < n)$.
 	\end{proof}	
 
 	\begin{proposition}
