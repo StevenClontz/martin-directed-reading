@@ -98,7 +98,7 @@
 	\begin{enumerate}
 		\item For $x \in \mathbb{X} \in \tau$, select $x \in B \subseteq \mathbb{X} \in \tau$, so 1 of definition 6 holds.
 		\item See definition 6-2.
-		\item Let $U \in \tau$, then for every $B \subseteq U, B \in \mathcal{B}$. Let $\mathcal{B'} = \lbrace B : B \in \mathcal{B} \rbrace$ so $U = \bigcup \mathcal{B'}$. Now let $\mathcal{B'} \subseteq \mathcal{B}$ such that for each $B \in \mathcal{B}, B \in \mathcal{B'}$ so $\bigcup \mathcal{B'} = U$.
+		\item Let $U \in \tau$, then for every $x \in U$, there exists $B_x \in \mathcal{B}$ where $x \in B_x \subseteq U \in \tau$. Let $\mathcal{B'} = \lbrace B_x : B_x \in \mathcal{B} \rbrace$ so $U = \bigcup \mathcal{B'}$. Now let $\mathcal{B'} \subseteq \mathcal{B} \subseteq \tau$, and since $\mathcal{B'} \subseteq \tau, \bigcup \mathcal{B'} \in \tau$.
 		\end{enumerate}
 \end{proof}
 
@@ -109,7 +109,7 @@
 	\begin{enumerate}
 		\item Let $\mathcal{B} = \lbrace\mathbb{X}\rbrace$ and let $x \in \mathbb{X} = B \in \mathcal{B}$.
 		\item Now consider $B_1, B_2 \in \mathcal{B}$. $B_1 = \mathbb{X}$ and $B_2 = \mathbb{X}$ Let $x \in B_1 \cap B_2$, then $x \in B_3 = \mathbb{X} : B_1 \cap B_2 = \mathbb{X}$.
-		\item Choose $\mathcal{B}_\emptyset \subseteq \mathcal{B}$ and $\mathcal{B}_\mathbb{X} \subseteq \mathcal{B}$ where $\bigcup \mathcal{B}_\emptyset = \emptyset$ and $\bigcup \mathcal{B}_\mathbb{X} = \mathbb{X}$, so $\bigcup \mathcal{B} = \tau = \lbrace \emptyset, \mathbb{X} \rbrace$.
+		\item Choose $\mathcal{B}_\emptyset = \emptyset \subseteq \mathcal{B}$ and $\mathcal{B}_\mathbb{X} = \lbrace \mathbb{X} \rbrace \subseteq \mathcal{B}$ where $\bigcup \mathcal{B}_\emptyset = \emptyset$ and $\bigcup \mathcal{B}_\mathbb{X} = \mathbb{X}$, so since $\mathcal{P}(\mathcal{B}) = \lbrace \emptyset, \lbrace \mathbb{X} \rbrace \rbrace$, $\lbrace \bigcup \mathcal{B'} : \mathcal{B'} \subseteq \mathcal{B} \rbrace = \lbrace \bigcup \mathcal{B}_\emptyset, \bigcup \mathcal{B}_\mathbb{X} \rbrace = \tau = \lbrace \emptyset, \lbrace \mathbb{X} \rbrace \rbrace$.
 	\end{enumerate}
 	\end{proof}
 
@@ -120,7 +120,8 @@
 		\begin{enumerate}
 			\item Let $x \in U \in \tau = \mathcal{P}(\mathbb{X})$. Then for $B = \lbrace x \rbrace \in \mathcal{B}, x \in B \subseteq U$.
 			\item Let $B_1, B_2 \in \mathcal{B}$. Let $y \in B_1 \cap B_2$. Let $B_3 = \lbrace y \rbrace$ $y \in B_3 = \lbrace y \rbrace \subseteq B_1 \cap B_2$. 
-			\item For every $x \in \mathbb{X}$ there are $B_x \in \mathcal{B}$ so $\bigcup \mathcal{B} = \bigcup \lbrace x : x \in \mathbb{X} \rbrace = \tau = \mathcal{P}(\mathbb{X})$.
+			\item Let $U \in \tau = \mathcal{P} \lbrace \mathbb{X} \rbrace$. Then $U = \lbrace x : x \in U \rbrace = \bigcup \lbrace x \rbrace = \bigcup \mathcal{B}_U$ for $\mathcal{B}_U = \lbrace \lbrace x \rbrace : x \in U \rbrace \subseteq \mathcal{B}$.
+			\item Let $\mathcal{B'} \subseteq \mathcal{B}$. Then $\bigcup \mathcal{B'} \in \mathcal{P}(\mathbb{X}) \in \tau$.
 		\end{enumerate}
 	\end{proof}
 
@@ -162,7 +163,7 @@
 	\end{theorem}
 
 	\begin{proof}
-	$K_1$ and $K_2$ are compact, so let $\mathcal{U}_3$ be an open cover of $K_3 = K_1 \cup K_2$. So let $\mathcal{U}_1 = \mathcal{U}_3 \supseteq K_1$ and $\mathcal{U}_2 = \mathcal{U}_3 \supseteq K_2$. Since $K_1, K_2$ are compact choose finite $\mathcal{F}_1 \subseteq \mathcal{U}_1 = \mathcal{U}_3$ and $\mathcal{F}_2 \subseteq \mathcal{U}_2 = \mathcal{U}_3$, so $\bigcup \mathcal{F}_1 \supseteq K_1$ and $\bigcup \mathcal{F}_2 \supseteq K_2$ and $\bigcup (\mathcal{F}_1 \cup \mathcal{F}_2) \supseteq K_3$.
+	$K_1$ and $K_2$ are compact, so let $\mathcal{U}_3$ be an open cover of $K_3 = K_1 \cup K_2$. So let $\mathcal{U}_1 = \mathcal{U}_3, \bigcup \mathcal{U}_3 \supseteq K_1$ and $\mathcal{U}_2 = \mathcal{U}_3, \bigcup \mathcal{U}_3 \supseteq K_2$. Since $K_1, K_2$ are compact choose finite $\mathcal{F}_1 \subseteq \mathcal{U}_1 = \mathcal{U}_3$ and $\mathcal{F}_2 \subseteq \mathcal{U}_2 = \mathcal{U}_3$, so $\bigcup \mathcal{F}_1 \supseteq K_1$ and $\bigcup \mathcal{F}_2 \supseteq K_2$ and $\bigcup (\mathcal{F}_1 \cup \mathcal{F}_2) \supseteq K_3$. Since $\mathcal{F}_1 \cup \mathcal{F}_2$ is a finite subset of $\mathcal{U}_3, K_3$ is compact.
 	\end{proof}
 
 	\begin{proposition}
@@ -170,7 +171,7 @@
 	\end{proposition}
 
 	\begin{proof}
-	For $F = \lbrace x_i : 0 \leq x_i < n \rbrace \subseteq \mathbb{X}$, let $\mathcal{U}$ be an open covering of $F$ so $\bigcup \mathcal{U} \supseteq F$. For each $0 \leq i < n$, let $\mathcal{U}_i \in \mathcal{U}$ satisfy $x_i \in \mathcal{U}_i$. Let finite $\mathcal{F} = \lbrace x_i : x_i \in \mathcal{U}_i \rbrace$, so $\bigcup \mathcal{F} \supseteq F$ and $F$ is compact.
+	For $F = \lbrace x_i : 0 \leq i < n \rbrace \subseteq \mathbb{X}$, let $\mathcal{U}$ be an open covering of $F$ so $\bigcup \mathcal{U} \supseteq F$. For each $0 \leq i < n$, let $\mathcal{U}_i \in \mathcal{U}$ satisfy $x_i \in \mathcal{U}_i$. Let finite $\mathcal{F} = \lbrace U_i : 0 \leq i < n \rbrace \subseteq \mathcal{U}$, so $\bigcup \mathcal{F} \supseteq F$ and $F$ is compact.
 	\end{proof}
 
 	\begin{proposition}
@@ -178,20 +179,21 @@
 	\end{proposition}
 
 	\begin{proof}
-	Let $K = \lbrace 0 \rbrace \cup \lbrace \frac{1}{n} : n \in \mathbb{Z^+} \rbrace \subseteq \mathbb{R}$ and let $\mathcal{U}$ be an open covering of $K$. We may choose $U_0 \in \mathcal{U}$ where $0 \in U_0$. So pick $a<b \in \mathbb{R}$ where $0 \in (a, b) \subseteq U_0$. Now let finite $F = \lbrace \frac{1}{m} : 0 \leq m < n \rbrace$ so it is compact, and choose $\mathcal{F} \subseteq \mathcal{U}$ with $\bigcup \mathcal{F} \supseteq F \cup U_0$ so $K$ is compact.
+	Let $K = \lbrace 0 \rbrace \cup \lbrace \frac{1}{n} : n \in \mathbb{Z^+} \rbrace \subseteq \mathbb{R}$ and let $\mathcal{U}$ be an open covering of $K$. We may choose $U_0 \in \mathcal{U}$ where $0 \in U_0$. So pick $a<b \in \mathbb{R}$ where $0 \in (a, b) \subseteq U_0$. Let $N \in \mathbb{Z}^+$ where $0 < \frac{1}{N} < b$. Now let finite $F = \lbrace \frac{1}{m} : 1 \leq m < N \rbrace$ so it is compact, and choose $\mathcal{F} \subseteq \mathcal{U}$ with $\bigcup \mathcal{F} \supseteq F$. So $K = \lbrace \frac{1}{n} : n \in \mathbb{Z}^+$ and $n \geq N \rbrace$. $\bigcup n \in \mathbb{Z}_+$ and $\lbrace \frac{1}{n} : 1 \leq n < N \rbrace$ is covered by $\lbrace U_0 \rbrace \cup \mathcal{F}$.
 	\end{proof}
 
 	\begin{proposition}
 	  Any unbounded subset of \(\mathbb R\) is not compact.
 	\end{proposition}
 	\begin{proof}
-	Let $\mathcal{U} = \lbrace (n-2, n) : n \in \mathbb{Z} \rbrace$. Let $n_i \in \mathbb{Z}$ be arbitrary for $0 \leq i < n$. Then $\mathcal{F} = \lbrace (n_i - 2, n_i) : 0 \leq i < n \rbrace$ is an arbitrary finite sub collection of $\mathcal{U}$. However, $\bigcup \mathcal{F} \not\supseteq K$, for $min(n_i-2: 0 \leq i < n)$ and $max(n_i : 0 \leq i < n)$ we can find a $k \in K : k < min(n_i-2: 0 \leq i < n)$ or $k > max(n_i : 0 \leq i < n)$.
+	Let $K$ be an unbounded subset of $\mathbb{R}$. Let $\mathcal{U} = \lbrace (n-2, n) : n \in \mathbb{Z} \rbrace$. Let $n_i \in \mathbb{Z}$ be arbitrary for $0 \leq i < n$. Then $\mathcal{F} = \lbrace (n_i - 2, n_i) : 0 \leq i < n \rbrace$ is an arbitrary finite sub collection of $\mathcal{U}$. However, $\bigcup \mathcal{F} \not\supseteq K$, for $min(n_i-2: 0 \leq i < n)$ and $max(n_i : 0 \leq i < n)$ we can find a $k \in K : k < min(n_i-2: 0 \leq i < n)$ or $k > max(n_i : 0 \leq i < n)$, so $k  \not\in \bigcup \mathcal{F}$ and $K$ is not compact.
 	\end{proof}	
 
 	\begin{proposition}
 	  Any open interval \((a,b)\subseteq\mathbb R\) is not compact.
 	\end{proposition}
 	\begin{proof}
+	Let $K = (a, b) \subseteq \mathbb{R}$, Let $\mathcal{U} = \lbrace (x, y) : x, y \in \mathbb{R}, a \leq x < y \leq b \rbrace$. So, $\bigcup \mathcal{U} \supseteq K$, and $\bigcup \mathcal{U} = K$. Let $n \in \mathbb{Z}$, let $x_i, y_i \in \mathbb{R}$ be arbitrary with $0 \leq i < n$. Then, $\mathcal{F} = \lbrace (x_i, y_i) : 0 \leq i < n \rbrace$ is an arbitrary finite subset of $\mathcal{U}$. However $\mathcal{F} \not\supseteq K$, for $min(x_i : 0 \leq i < n)$ and $max(y_i : 0 \leq i < n)$ we can find a $k \in K : k < min(x_i : 0 \leq i < n)$ or $k > max(y_i : 0 \leq i < n)$ so $k \not\in \bigcup \mathcal{F}$ and $K$ is not compact.
 	\end{proof}
 
 
