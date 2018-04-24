@@ -179,7 +179,7 @@
 	\end{proposition}
 
 	\begin{proof}
-	Let $K = \lbrace 0 \rbrace \cup \lbrace \frac{1}{n} : n \in \mathbb{Z^+} \rbrace \subseteq \mathbb{R}$ and let $\mathcal{U}$ be an open covering of $K$. We may choose $U_0 \in \mathcal{U}$ where $0 \in U_0$. So pick $a<b \in \mathbb{R}$ where $0 \in (a, b) \subseteq U_0$. Let $N \in \mathbb{Z}^+$ where $0 < \frac{1}{N} < b$. Now let finite $F = \lbrace \frac{1}{m} : 1 \leq m < N \rbrace$ so it is compact, and choose $\mathcal{F} \subseteq \mathcal{U}$ with $\bigcup \mathcal{F} \supseteq F$. So $K = \lbrace 0 \rbrace \cup \lbrace \frac{1}{m} : N \leq m < \infty \rbrace \cup \lbrace \frac{1}{m} : 1 \leq m < N \rbrace$.
+	Let $K = \lbrace 0 \rbrace \cup \lbrace \frac{1}{n} : n \in \mathbb{Z^+} \rbrace \subseteq \mathbb{R}$ and let $\mathcal{U}$ be an open covering of $K$. We may choose $U_0 \in \mathcal{U}$ where $0 \in U_0$. So pick $a<b \in \mathbb{R}$ where $0 \in (a, b) \subseteq U_0$. Let $N \in \mathbb{Z}^+$ where $0 < \frac{1}{N} < b$. Now let finite $F = \lbrace \frac{1}{m} : 1 \leq m < N \rbrace$ so it is compact, and choose $\mathcal{F} \subseteq \mathcal{U}$ with $\bigcup \mathcal{F} \supseteq F$. So, $\lbrace \bigcup \mathcal{F} \cup (a,b) \cup U_0 \rbrace \supseteq K$.
 	\end{proof}
 
 	\begin{proposition}
@@ -214,7 +214,7 @@
 		Every \(\sigma\)-compact subset of a topological space is Lindel\"of.
 	\end{theorem}
 	\begin{proof}
-	Let $K$ be \(\sigma\)-compact. Let $\mathcal{U}$ be an arbitrary collection of open sets such that $\bigcup \mathcal{U} \supseteq K$. Choose finite $\mathcal{F} = \lbrace F_i : i \in \mathbb{N} \rbrace \subseteq \mathcal{U}$ so $\mathcal{F}$ is countable. Let each $F_{i \in \mathbb{N}} \supseteq K_{n \in \mathbb{N}}$ so, $\bigcup \mathcal{F} = \bigcup_{i \in \mathbb{N}} F_i \supseteq \bigcup_{n \in \mathbb{N}} K_n = K$. Therefore $\bigcup \mathcal{F} \supseteq K$.
+	Let $K$ be \(\sigma\)-compact. Let $\mathcal{F}_n = \lbrace U_{n0}, U_{n1}, ..., U_{nm} \rbrace$ be a finite subcover of $\mathcal{U}$ for $K_n$. So, $\mathcal{C} = \bigcup_{n \in \mathbb{N}} \mathcal{F}_n$ is a countable subcover of $\mathcal{U}$ for $K$. Therefore $K$ is Lindel\"of.
 	
 	\end{proof}
 
@@ -233,4 +233,15 @@
 		This proof is trivial as it is defined as stated here in definition 21.
 	\end{proof}
 
+	\begin{theorem}
+		If $\mathcal{K}$ $\underset{pre}{\uparrow}$ $Gru_{K, P} (X)$ then $X$ is Lindel\"of.
+	\end{theorem}
+	\begin{proof}
+	 It is shown in Theorem 2.5 (3, Clontz) that when $\mathcal{K}$ $\underset{pre}{\uparrow}$ $Gru_{K, P} (X)$, $X$ is hemicompact and furthermore by the definition of hemicompactness  $X = \lbrace \bigcup_{m \leq n} \sigma (m) : n < \omega \rbrace$.
+	 \newline\newline
+	 For $X = \lbrace \bigcup_{m \leq n} \sigma (m) : n < \omega \rbrace$, let $\mathcal{U}$ be an arbitrary covering of $X$ and let $\mathcal{F}_n = \lbrace U_{n0}, U_{n2}, ... , U_{nm}\rbrace$ be a finite subcover of $\mathcal{U}$ for $K_n$. So, $\mathcal{C} = \bigcup_{n \in \mathbb{N}} \mathcal{F}_n$ is a countable subcover of of $\mathcal{U}$ for $K$.\newline \newline
+	 Alternate idea:
+	 \newline
+	 For $X = \lbrace \bigcup_{m \leq n} \sigma (m) : n < \omega \rbrace$, let $\mathcal{U}$ be an arbitrary covering of $X$ and let $\mathcal{F} \subseteq \mathcal{U}$, with $\mathcal{F} = \lbrace F_i : i < \omega \rbrace$. For each $\sigma(m)$ with $m \leq n < \omega$ let $F_{i < \omega} \supseteq \sigma(m)$. So, $\bigcup \mathcal{F} \supseteq \lbrace \bigcup_{m \leq n} \sigma(m) : n < \omega \rbrace$ so $X$ is Lindel\"of.
+	\end{proof}
 \end{document}
