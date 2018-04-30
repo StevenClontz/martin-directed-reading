@@ -205,13 +205,13 @@
 	\end{definition}
 
 	\begin{definition}
-	  A subset \(K\) of a topological space \(X\) is said to be \textbf{\(\sigma\)-compact} if
+	  A subset \(K\) of a topological space \(X\) is said to be \textbf{\(\boldsymbol{\sigma}\)-compact} if
 	  there exist compact subspaces \(K_n\) of \(X\) for \(n\in\mathbb N\) such that
 	  \(K=\bigcup_{n\in\mathbb N} K_n\).
 	  \newline \newline
 	\end{definition}
 	\begin{theorem}
-		Every \(\sigma\)-compact subset of a topological space is Lindel\"of.
+		Every \(\boldsymbol{\sigma}\)\textbf{-compact} subset of a topological space is \textbf{Lindel\"of}.
 	\end{theorem}
 	\begin{proof}
 	Let $K$ be \(\sigma\)-compact. Let $\mathcal{F}_n = \lbrace U_{n0}, U_{n1}, ..., U_{nm} \rbrace$ be a finite subcover of $\mathcal{U}$ for $K_n$. So, $\mathcal{C} = \bigcup_{n \in \mathbb{N}} \mathcal{F}_n$ is a countable subcover of $\mathcal{U}$ for $K$. Therefore $K$ is Lindel\"of.
@@ -221,27 +221,53 @@
 
 	\begin{definition}
 	  A subset \(K\) of a topological space \(X\) is said to be \textbf{hemicompact} if
-	  there exist compact subspaces \(K_n\) of \(X\) for \(n\in\mathbb N\) such that
-	  \(K=\bigcup_{n\in\mathbb N} K_n\), and for every compact subset \(H\subseteq K\),
+	  for every compact subset \(H\subseteq K\),
 	  \(H\subseteq K_n\) for some \(n\in\mathbb N\).
 	\end{definition}
 
 	\begin{theorem}
-		Every hemicompact subset of a topological space is \(\sigma\)-compact.
+		Every \textbf{hemicompact} subset of a topological space is \(\boldsymbol{\sigma}\)\textbf{-compact}.
 	\end{theorem}
 	\begin{proof}
-		This proof is trivial as it is defined as stated here in definition 21.
+		For all compact $C \subseteq K \subseteq X$, $C \subseteq K_{n \in \mathbb{N}} \subseteq K$. \newline
+		$K_{n \in \mathbb{N}} \subseteq X$. Since all compact $C_{i \in \mathbb{N}}$ are subsets of some $K_{n \in \mathbb{N}}$, $\underset{n \in \mathbb{N}}{\bigcup}K_n \supseteq \underset{i \in \mathbb{N}}{\bigcup} C_i$ so $\underset{n\in\mathbb{N}}{\bigcup}K_n = K$.
+	\end{proof}
+
+	\begin{definition}
+		$X$ is \textbf{locally compact} if for every $x \in X$ there exists an open set $U$ and compact $K$ with $x \in U \subseteq K$.
+	\end{definition}
+	
+	\begin{definition}
+		$x$ is a \textbf{cluster point} of $\langle p_n \rangle_{n < \omega}$ if and only if for every neighborhood $U$ of $x$, $U$ hits infinitely many $p_n$.
+	\end{definition}
+
+	\begin{definition}
+		$\boldsymbol{Gru_{\mathcal{K},\mathcal{P}}(X)}$ is a game defined as... $\mathcal{K}$ wins if and only if $\langle p_n \rangle_{n<\omega}$ lacks a \textbf{cluster point}. 
+	\end{definition}
+	
+	\begin{definition}
+	$\boldsymbol{\mathcal{K} \underset{pre}{\uparrow} Gru_{\mathcal{K}, \mathcal{P}}(X)}$ is the statement that $\mathcal{K}$ has a winning strategy $\sigma : \omega \rightarrow \mathcal{K}(X)$ that depends only on the round number (ignores the moves of $\mathcal{P}$).
+	\end{definition}
+
+	\begin{theorem}
+		If $X$ is \textbf{Lindel\"of}, then $\boldsymbol{\mathcal{K}$ $\underset{pre}{\uparrow}$ $Gru_{\mathcal{K}, \mathcal{P}} (X)}$
+	\end{theorem}
+	\begin{proof}
+		Let $X$ be Lindel\"of, so there is a countable subcollection $\mathcal{C} \subseteq \mathcal{U}$, where $\mathcal{U}$ is an arbitrary covering of $X$. So, $\mathcal{C} = \lbrace U_n : U_n \in \mathcal{U}, n < \omega \rbrace$ and $\bigcup \mathcal{C} \supseteq X$.\newline \newline
+		For $Gru_{\mathcal{K}, \mathcal{P}}(X)$, $\mathcal{K}$ chooses compact $K_{i \leq n < \omega} \supseteq U_{n < \omega} \in \mathcal{C}$ and $\mathcal{P}$ chooses $p \in X$ such that $p \not\in K_{i \leq n < \omega}$. Since $\lbrace K_i : i \leq n < \omega \rbrace$ is countable and $\bigcup \lbrace K_i : i \leq n < \omega \rbrace \supseteq X$, $\mathcal{P}$ has countably many $p_{m \leq n < \omega}$. Therefore $\langle p_m \rangle$ is finite and $X$ has no cluster points. Thus, $\mathcal{K}$ $\underset{pre}{\uparrow}$ $Gru_{\mathcal{K}, \mathcal{P}} (X)$.
+	\end{proof}
+
+	\begin{lemma}
+	Let $K$ be a compact subset of $X$. If $\langle p_n \rangle$ is a sequence of points in $K$, then $\langle p_n \rangle$ has a cluster point.
+	\end{lemma}
+	\begin{proof}
+	This is obviously true if the sequence only uses finitely many different points (one point must be repeated infinitely often, so it is its own cluster point). So assume $\langle p_n \rangle$ uses infinitely many different points. If $\langle p_n \rangle$ didn't have a cluster point, then for each $x \in K$, let $U_x$ contain only finitely many $p_n$. $\lbrace U_x : x \in K \rbrace$ covers $K$, so choose $x_i$ for $i \leq n : \lbrace U_{x_i} : i \leq n \rbrace$ covers $K$. But each $U_{x_i}$ contains only finitely many $p_n$, so $\langle p_n \rangle$ cannot have infinitely many different points to choose from and $\langle p_n \rangle$ does not have a cluster point.
 	\end{proof}
 
 	\begin{theorem}
-		If $\mathcal{K}$ $\underset{pre}{\uparrow}$ $Gru_{K, P} (X)$ then $X$ is Lindel\"of.
+		$\boldsymbol{\mathcal{K}$ $\underset{pre}{\uparrow}$ $Gru_{\mathcal{K}, \mathcal{P}} (X)} \Rightarrow X$ is \textbf{hemicompact}.
 	\end{theorem}
 	\begin{proof}
-	 It is shown in Theorem 2.5 (3, Clontz) that when $\mathcal{K}$ $\underset{pre}{\uparrow}$ $Gru_{K, P} (X)$, $X$ is hemicompact and furthermore by the definition of hemicompactness  $X = \lbrace \bigcup_{m \leq n} \sigma (m) : n < \omega \rbrace$.
-	 \newline\newline
-	 For $X = \lbrace \bigcup_{m \leq n} \sigma (m) : n < \omega \rbrace$, let $\mathcal{U}$ be an arbitrary covering of $X$ and let $\mathcal{F}_n = \lbrace U_{n0}, U_{n2}, ... , U_{nm}\rbrace$ be a finite subcover of $\mathcal{U}$ for $K_n$. So, $\mathcal{C} = \bigcup_{n \in \mathbb{N}} \mathcal{F}_n$ is a countable subcover of of $\mathcal{U}$ for $K$.\newline \newline
-	 Alternate idea:
-	 \newline
-	 For $X = \lbrace \bigcup_{m \leq n} \sigma (m) : n < \omega \rbrace$, let $\mathcal{U}$ be an arbitrary covering of $X$ and let $\mathcal{F} \subseteq \mathcal{U}$, with $\mathcal{F} = \lbrace F_i : i < \omega \rbrace$. For each $\sigma(m)$ with $m \leq n < \omega$ let $F_{i < \omega} \supseteq \sigma(m)$. So, $\bigcup \mathcal{F} \supseteq \lbrace \bigcup_{m \leq n} \sigma(m) : n < \omega \rbrace$ so $X$ is Lindel\"of.
+		We prove the contrapositive. Let $\sigma$ be a predetermined strategy, and assume $X$ isn't hemicompact. So there exists a compact $K$ that isn't a union of finite $\sigma(n)$, so player $\mathcal{P}$ may always legally choose a point $p_n \in K$. Then by the lemma, $\langle p_n \rangle$ has a cluster point. Therefore $\sigma$ isn't a winning strategy.
 	\end{proof}
 \end{document}
