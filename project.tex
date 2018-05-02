@@ -220,17 +220,14 @@
 
 
 	\begin{definition}
-	  A subset \(K\) of a topological space \(X\) is said to be \textbf{hemicompact} if
-	  for every compact subset \(H\subseteq K\),
-	  \(H\subseteq K_n\) for some \(n\in\mathbb N\).
+	  A subset \(K\) of a topological space \(X\) is said to be \textbf{hemicompact} if there exists compact sets $K_n \subseteq K$ for $n \in \mathbb{N}$ such that for every compact subset \(H\subseteq K\), \(H\subseteq K_n\) for some \(n\in\mathbb N\).
 	\end{definition}
 
 	\begin{theorem}
 		Every \textbf{hemicompact} subset of a topological space is \(\boldsymbol{\sigma}\)\textbf{-compact}.
 	\end{theorem}
 	\begin{proof}
-		For all compact $C \subseteq K \subseteq X$, $C \subseteq K_{n \in \mathbb{N}} \subseteq K$. \newline
-		$K_{n \in \mathbb{N}} \subseteq X$. Since all compact $C_{i \in \mathbb{N}}$ are subsets of some $K_{n \in \mathbb{N}}$, $\underset{n \in \mathbb{N}}{\bigcup}K_n \supseteq \underset{i \in \mathbb{N}}{\bigcup} C_i$ so $\underset{n\in\mathbb{N}}{\bigcup}K_n = K$.
+		Let $K_n \subseteq K$ witness hemicompactness, of course $\underset{n \in \mathbb{N}}{\bigcup}K_n \subseteq K$, since $K_n \subseteq K$. Let $k \in K$, so $\lbrace k \rbrace$ is compact and $\bigcup\lbrace k \rbrace = K$. For $k_n \in K$, choose $K_n : k_n \in K_n \subseteq K$, so $K = \underset{n \in \mathbb{N}}{\bigcup}K_n$
 	\end{proof}
 
 	\begin{definition}
@@ -242,7 +239,7 @@
 	\end{definition}
 
 	\begin{definition}
-		$\boldsymbol{Gru_{\mathcal{K},\mathcal{P}}(X)}$ is a game defined as... $\mathcal{K}$ wins if and only if $\langle p_n \rangle_{n<\omega}$ lacks a \textbf{cluster point}. 
+		$\boldsymbol{Gru_{\mathcal{K},\mathcal{P}}(X)}$ is a game defined as the $Gruenhage compact/point game$ with players $\mathcal{K}$, $mathcal{P}$ played on a topological space $X$. During round $n$, $\mathcal{K}$ chooses a compact subset $K_n$ of $X$, followed by $\mathcal{P}$ choosing a point $p_n \in X$ such that $p_n \not\in \bigcup_{m\leq n}K_m$. $\mathcal{K}$ wins if and only if $\langle p_n \rangle_{n<\omega}$ lacks a \textbf{cluster point}. 
 	\end{definition}
 	
 	\begin{definition}
@@ -250,18 +247,18 @@
 	\end{definition}
 
 	\begin{theorem}
-		If $X$ is \textbf{Lindel\"of}, then $\boldsymbol{\mathcal{K}$ $\underset{pre}{\uparrow}$ $Gru_{\mathcal{K}, \mathcal{P}} (X)}$
+		If $X$ is \textbf{Lindel\"of} and locally compact, then $\boldsymbol{\mathcal{K}$ $\underset{pre}{\uparrow}$ $Gru_{\mathcal{K}, \mathcal{P}} (X)}$
 	\end{theorem}
 	\begin{proof}
-		Let $X$ be Lindel\"of, so there is a countable subcollection $\mathcal{C} \subseteq \mathcal{U}$, where $\mathcal{U}$ is an arbitrary covering of $X$. So, $\mathcal{C} = \lbrace U_n : U_n \in \mathcal{U}, n < \omega \rbrace$ and $\bigcup \mathcal{C} \supseteq X$.\newline \newline
-		For $Gru_{\mathcal{K}, \mathcal{P}}(X)$, $\mathcal{K}$ chooses compact $K_{i \leq n < \omega} \supseteq U_{n < \omega} \in \mathcal{C}$ and $\mathcal{P}$ chooses $p \in X$ such that $p \not\in K_{i \leq n < \omega}$. Since $\lbrace K_i : i \leq n < \omega \rbrace$ is countable and $\bigcup \lbrace K_i : i \leq n < \omega \rbrace \supseteq X$, $\mathcal{P}$ has countably many $p_{m \leq n < \omega}$. Therefore $\langle p_m \rangle$ is finite and $X$ has no cluster points. Thus, $\mathcal{K}$ $\underset{pre}{\uparrow}$ $Gru_{\mathcal{K}, \mathcal{P}} (X)$.
+		For $x \in X$, let $x \in U_x \subseteq K_x$ for $U_x$ open and $K_x$ compact. Then by definition of Lindel\"of choose $U_n \in \mathcal{U} = \lbrace U_x : x \in X \rbrace$ such that $\underset{n \in \mathbb{N}}{\bigcup}U_n = X$. Then for each $U_n$, there exists compact $K_n$ where $U_n \subseteq K_n$. \newline
+		For $Gru_{\mathcal{K}, \mathcal{P}} (X)$, let $\sigma(n) = K_n$ denote a strategy for $\mathcal{K}$, $\mathcal{K}$ chooses compact $K_n \supseteq U_n \in \mathcal{C}$ and $\mathcal{P}$ chooses $p \in X$ such that $p \not\in K_n$. $\lbrace K_i : i < \omega \rbrace$ is countable and $\bigcup \lbrace K_i : i < \omega \rbrace \supseteq X$. For $\mathcal{P}$ to win, there must be $U_n \in \mathcal{C}$ such that $\sigma(n) \not\supseteq U_n$, but we've already established that $\bigcup \lbrace K_i : i < \omega \rbrace \supseteq X$ so contradiction, thus $\mathcal{K}$ $\underset{pre}{\uparrow}$ $Gru_{\mathcal{K}, \mathcal{P}} (X)$.
 	\end{proof}
 
 	\begin{lemma}
 	Let $K$ be a compact subset of $X$. If $\langle p_n \rangle$ is a sequence of points in $K$, then $\langle p_n \rangle$ has a cluster point.
 	\end{lemma}
 	\begin{proof}
-	This is obviously true if the sequence only uses finitely many different points (one point must be repeated infinitely often, so it is its own cluster point). So assume $\langle p_n \rangle$ uses infinitely many different points. If $\langle p_n \rangle$ didn't have a cluster point, then for each $x \in K$, let $U_x$ contain only finitely many $p_n$. $\lbrace U_x : x \in K \rbrace$ covers $K$, so choose $x_i$ for $i \leq n : \lbrace U_{x_i} : i \leq n \rbrace$ covers $K$. But each $U_{x_i}$ contains only finitely many $p_n$, so $\langle p_n \rangle$ cannot have infinitely many different points to choose from and $\langle p_n \rangle$ does not have a cluster point.
+	This is obviously true if the sequence only uses finitely many different points (one point must be repeated infinitely often, so it is its own cluster point). So without loss of generality $\langle p_n \rangle$ uses infinitely many different points. If $\langle p_n \rangle$ didn't have a cluster point, then for each $x \in K$, let $U_x$ contain only finitely many $p_n$. $\lbrace U_x : x \in K \rbrace$ covers $K$, so choose $x_i$ for $i \leq n : \lbrace U_{x_i} : i \leq n \rbrace$ covers $K$. But each $U_{x_i}$ contains only finitely many $p_n$, so $\langle p_n \rangle$ cannot have infinitely many different points to choose, contradiction. So $\langle p_n \rangle$ does have a cluster point.
 	\end{proof}
 
 	\begin{theorem}

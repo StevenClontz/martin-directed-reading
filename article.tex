@@ -29,14 +29,14 @@
 
 \begin{document}
 
-\title{Relating games of Menger, countable fan tightness, and selective separability}
+\title{An Investigation in Topological Properties}
 
 
-\author{Steven Clontz}
-\address{Department of Mathematics and Statistics,
-The University of South Alabama,
-Mobile, AL 36688}
-\email{sclontz@southalabama.edu}
+\author{Cody Martin}
+\address{1313 Schillinger Rd. S. 
+Apt. 3407
+Mobile, AL 36695}
+\email{cdm1322@jagmail.southalabama.edu}
 
 
 
@@ -47,12 +47,7 @@ Mobile, AL 36688}
 
 
 \begin{abstract}
-  By adapting techniques of Arhangel'skii, Barman, and Dow, we may
-  equate the existence of perfect-information, Markov, and tactical
-  strategies between two interesting selection games.
-  These results shed some light on Gruenhage's question asking whether all
-  strategically selectively separable spaces are Markov selectively
-  separable.
+  This is the culmination of topics and topological properties that have been studied over the course of the Spring 2018 semester, mentored by Dr. Steven Clontz.
 \end{abstract}
 
 
@@ -64,34 +59,249 @@ Mobile, AL 36688}
 
 
 
-\section{Introduction}
+\section{Basic Topological Properties and Definitions}
 
-\begin{definition}
-  Foo
-\end{definition}
+	\begin{proposition}
+	Find an infinite collection of open intervals in $\mathbb{R}$ whose intersection is not an open interval.
+	\end{proposition}
+	\begin{proof}
+	$\bigcap\lbrace (\frac{-1}{n}, \frac{1}{n}) : n \in \mathbb{Z}^+\rbrace = \lbrace 0 \rbrace$ which is not an open interval or even open.
+	\end{proof}
 
-Bar.
+  \begin{proposition}
+      Any finite union of closed sets is closed, and any arbitrary intersection of closed sets is closed.
+  \end{proposition}
+  \begin{proof}
+	We proceed by showing that any finite union of closed sets is closed. Let C, D be closed sets. Let A, B be compliments of C, D so A, B are open. Then, A $\cap$ B is also open. Thus, X$\setminus$(A $\cap$ B) is closed. By Demorgan's Law, X$\setminus$(A $\cap$ B) = X$\setminus$A $\cup$ X$\setminus$B = C $\cup$ D which is closed.
+	\newline\newline Now that we've shown that C $\cup$ D is closed for all C, D; Assume C$_1$ $\cup $ C$_2 \cup ...$ $\cup $ C$_n$ is closed for closed sets C$_i$. Then for C$_1$ $\cup$ ... $\cup$ C$_n$ $\cup$ C$_{n+1}$, let K = C$_1$ $\cup$ ... $\cup$ C$_n$. Thus K $\cup$ C$_{n+1}$ = C$_1$ $\cup$ ... $\cup$ C$_n$ $\cup$ C$_{n+1}$ is closed.
+	\newline\newline Now we show that any arbitrary intersection of closed sets is closed. Let $\mathcal{C}$ be a collection of closed sets. Let $\mathcal{U} = \lbrace$X$\setminus$C : C $\in \mathcal{C}\rbrace$, so $\mathcal{U}$ is a collection of open sets. Then, $\bigcup \mathcal{U}$ is also open. Thus, X$\setminus\bigcup\mathcal{U}$ is closed. By Demorgan's Law, X$\setminus\bigcup\mathcal{U}$ = $\bigcap\mathcal{C}$ Therefore, $\bigcap\mathcal{C}$ is closed.
+	\end{proof}
 
+	\begin{lemma}
+	A set U is open if and only if for every point $x \in$ U, there exists an open set U$_x$ where $x \in $ U$_x \subseteq$ U
+	\end{lemma}
+	\begin{proof} Suppose U is open, then for all x $\in$ U there exists an open U$_x$ = U, such that x $\in$ U$_x \subseteq$ U.
+	\newline
+	To show the converse, suppose that for each x $\in$ U there is an open set U$_x$ where x $\in$ U$_x$ $\subseteq$ U. For $x \in U, x \in U_x$ so $x \in \bigcup \lbrace U_x : x \in U \rbrace$. Thus $U \subseteq \bigcup \lbrace U_x : x \in U_x \rbrace$. Now let y $\in$ U$_x$ for some x $\in$ U, then U$_x$ $\subseteq$ U. Thus U $\supseteq$ $\bigcup \lbrace$ U$_x$ : x $\in$ U $\rbrace$. Therefore U = $\bigcup \lbrace$ U$_x$ : x $\in$ U $\rbrace$.
+	\end{proof}
 
-\begin{question}\label{mainQuestion}
-  Does \(SS^+\) imply \(SS^{++}\)?
-\end{question}
+	\begin{proposition}
+		A set K in a topological space X is closed if and only if K contains all its limit points.
+	\end{proposition}
+	\begin{proof} Suppose K contains all its limit points.
+	If K = X, then K is closed because $\emptyset$ is open.	Otherwise let x $\in$ X$\setminus$K, so x is not a limit point of K.	Then, $\exists$ $x \in$ U$_x \in \tau$ such that U$_x \cap$ K = $\emptyset$ since $x \not\in K$.	So, $x \in $ U$_x \subseteq$ X$\setminus$K.	By the lemma, X$\setminus$K is open so K is closed.
 
+	To show the converse is true as well, let x $\in$ X$\setminus$K, which is an open set by the lemma. Since $($X$\setminus$K$)\cap$K is the empty set, x is not a limit point of K. So, if $\ell$ is any limit point of K, then $\ell \not\in$ X$\setminus$K, so $\ell \in$ K and K contains all of its limit points.
+	\end{proof}
 
+	\begin{proposition}
+	Verify the discrete and indiscrete topologies are topologies
+	\end{proposition}
+	\begin{proof} To prove the discrete topology is an actual topology, first we define that the discrete topology on a set X is $\tau$ = $\mathcal{P}($X$)$.	$\emptyset$, X $\in \mathcal{P}($X$)$, So $\emptyset,$ X $\in \tau$. Now, let $\mathcal{U} \subseteq \tau$ = $\mathcal{P}($X$)$, then the $\bigcup$U $\in \mathcal{P}($X$)$. Let U, V $\in \tau$ = $\mathcal{P}($X$)$ then the intersection U $\cap$ V $\in \mathcal{P}($X$)$ = $\tau$. Now to show that the indiscrete topology is an actual topology, we define that the indiscrete topology on a set X is given as $\tau$ = $\lbrace \emptyset$, X$\rbrace$. Clearly, $\emptyset$, X $\in \tau$. Let $\mathcal{U}$ be a collection of open sets in X, then $\bigcup \mathcal{U}$ = X, thus $\bigcup \mathcal{U} \in \tau$.
+	\end{proof}
 
+	\begin{definition}
+		A collection of sets \(\mathcal{B}\subseteq\mathcal{P}(X)\) is
+		called a \textbf{basis} if:
+		\begin{enumerate}
+			\item For all \(x\in X\), there exists \(B\in\mathcal{B}\) such that
+			\(x\in B\).
+			\item  For all \(B_1,B_2 \in \mathcal{B}\) with \(x \in B_1 \cap B_2\), there exists \(B_3 \in \mathcal{B}\) with
+			\(x\in B_3 \subseteq B_1 \cap B_2\).
+		\end{enumerate}
+	  The set \(\{\bigcup\mathcal{B}':\mathcal{B}'\subseteq\mathcal{B}\}\)
+		is called the topology generated by \(\mathcal{B}\).
+	\end{definition}
 
-\section{\(CFT\), \(CDFT\) and \(SS\)}
+	\begin{theorem}
+		The ``topology generated by \(\mathcal{B}\)'' is actually a topology.
+	\end{theorem}
+	\begin{proof} 
+	This was not finished correctly and fell through the cracks of time. Should it be removed?
+	\end{proof}
 
-\begin{theorem}[Lemma 2.7 of ]
-  The following are equivalent for any topological space \(X\).
-  \begin{itemize}
-    \item \(X\) is \(SS\).
-    \item \(X\) is separable and \(CDFT\).
-    \item \(X\) has a countable dense subset \(D\) where
-          \(CDFT_x\) holds for all \(x\in D\).
-  \end{itemize}
+	\begin{theorem}
+	Let $\tau$ be a topology on X. Then $\mathcal{B} \subseteq \tau$ generates $\tau$ if:
+	\newline
+	1. For all x $\in$ U $\in \tau$, there exists B $\in$ $\mathcal{B}$ where x $\in$ B $\subseteq$ U $\in \tau$
+	\newline
+	2. For all B$_1$, B$_2 \in \mathcal{B}$ with x $\in ($B$_1 \cap$ B$_2)$, there exists B$_3 \in \mathcal{B}$ with x $\in$ B$_3 \subseteq$ B$_1 \cap$ B$_2$.
 \end{theorem}
+\begin{proof}:\newline
+	\begin{enumerate}
+		\item For $x \in \mathbb{X} \in \tau$, select $x \in B \subseteq \mathbb{X} \in \tau$, so 1 of definition 6 holds.
+		\item See definition 6-2.
+		\item Let $U \in \tau$, then for every $x \in U$, there exists $B_x \in \mathcal{B}$ where $x \in B_x \subseteq U \in \tau$. Let $\mathcal{B'} = \lbrace B_x : B_x \in \mathcal{B} \rbrace$ so $U = \bigcup \mathcal{B'}$. Now let $\mathcal{B'} \subseteq \mathcal{B} \subseteq \tau$, and since $\mathcal{B'} \subseteq \tau, \bigcup \mathcal{B'} \in \tau$.
+		\end{enumerate}
+\end{proof}
+
+	\begin{theorem}
+	$\lbrace\mathbb{X}\rbrace$ is a basis for $\tau$ = $\lbrace\emptyset$, $\mathbb{X}\rbrace$. (indiscrete)
+	\end{theorem}
+	\begin{proof}:\newline
+	\begin{enumerate}
+		\item Let $\mathcal{B} = \lbrace\mathbb{X}\rbrace$ and let $x \in \mathbb{X} = B \in \mathcal{B}$.
+		\item Now consider $B_1, B_2 \in \mathcal{B}$. $B_1 = \mathbb{X}$ and $B_2 = \mathbb{X}$ Let $x \in B_1 \cap B_2$, then $x \in B_3 \subseteq B_1 \cap B_2$.
+		\item Choose $\mathcal{B}_\emptyset = \emptyset \subseteq \mathcal{B}$ and $\mathcal{B}_\mathbb{X} = \lbrace \mathbb{X} \rbrace \subseteq \mathcal{B}$ where $\bigcup \mathcal{B}_\emptyset = \emptyset$ and $\bigcup \mathcal{B}_\mathbb{X} = \mathbb{X}$, so since $\mathcal{P}(\mathcal{B}) = \lbrace \emptyset, \lbrace \mathbb{X} \rbrace \rbrace$, $\lbrace \bigcup \mathcal{B'} : \mathcal{B'} \subseteq \mathcal{B} \rbrace = \lbrace \bigcup \mathcal{B}_\emptyset, \bigcup \mathcal{B}_\mathbb{X} \rbrace = \tau = \lbrace \emptyset, \lbrace \mathbb{X} \rbrace \rbrace$.
+	\end{enumerate}
+	\end{proof}
+
+	\begin{theorem}
+	$\mathcal{B} = \lbrace\lbrace x \rbrace$ : x $\in \mathbb{X}\rbrace$ is a basis for $\tau$ = $\mathcal{P}(\mathbb{X})$ = $\lbrace$ U : U $\subseteq \mathbb{X} \rbrace$. (discrete)
+	\end{theorem}
+	\begin{proof}:\newline
+		\begin{enumerate}
+			\item Let $x \in U \in \tau = \mathcal{P}(\mathbb{X})$. Then for $B = \lbrace x \rbrace \in \mathcal{B}, x \in B \subseteq U$.
+			\item Let $B_1, B_2 \in \mathcal{B}$. Let $y \in B_1 \cap B_2$. Let $B_3 = \lbrace y \rbrace$ $y \in B_3 = \lbrace y \rbrace \subseteq B_1 \cap B_2$. 
+			\item Let $U \in \tau = \mathcal{P} ( \mathbb{X} )$. Then $U = \lbrace x : x \in U \rbrace = \bigcup \lbrace x : x \in U \rbrace = \bigcup \mathcal{B}_U$ for $\mathcal{B}_U = \lbrace \lbrace x \rbrace : x \in U \rbrace \subseteq \mathcal{B}$.
+			\newline Let $\mathcal{B'} \subseteq \mathcal{B}$. Then $\bigcup \mathcal{B'} \in \mathcal{P}(\mathbb{X}) \in \tau$.
+		\end{enumerate}
+	\end{proof}
+
+	\begin{definition}
+	The \textbf{Euclidean topology} on $\mathbb{R}$ is the topology generated by the \textbf{basis} \newline $\lbrace(a, b) : a < b \in \mathbb{R}\rbrace$.
+	\end{definition}
+
+	\begin{theorem}
+	$\lbrace($a, b$)$ : a $<$ b $\in \mathbb{R}\rbrace$ is a basis.
+	\end{theorem}
+	\begin{proof}:\newline
+		\begin{enumerate}
+			\item Let $\mathcal{B} = \lbrace (a, b) : a < b \in \mathbb{R} \rbrace$. Let $x \in \mathbb{R}$ and let $B = (x-1, x+1)$, then $x \in B \subseteq \mathbb{R}$ and $B \in \mathcal{B}$.	
+			\item For $B_1 = (a_1, b_1)$, $B_2 = (a_2, b_2)$, $a_1<b_1$, $a_2<b_2 \in \mathbb{R}$ with $x \in B_1 \cap B_2$, then there is $B_3 = ( max(a_1, a_2), min(b_1, b_2) ) \subseteq B_1 \cap B_2$ such that $a_1,a_2<x<b_1,b_2$ so $ x \in B_3$.
+		\end{enumerate}
+	\end{proof}
+
+	\begin{theorem}
+	$\lbrace($a, b$)$ : a $<$ b $\in \mathbb{Q}\rbrace$ is a basis for the Euclidean topology.
+	\end{theorem}
+	\begin{proof}:\newline
+		\begin{enumerate}
+		\item Let $\mathcal{B} = \lbrace (a, b) : a < b \in \mathbb{Q}\rbrace$ Let $x \in \mathbb{R}$ then, $\lfloor x \rfloor -1 < x < \lceil x \rceil + 1$. Let B = $(\lfloor x \rfloor -1, \lceil x \rceil + 1)$, so $x \in B \in \mathcal{B}$ and $B \subseteq \mathbb{Q}$.
+		\item Now, for $B_1, B_2 \in \mathcal{B}, \exists x \in B_1 \cap B_2 : x \in B_1$ and $x \in B_2$. $a_1, a_2 < b_1, b_2 \in \mathbb{Q}.$ Let $B_1 = (a_1, b_1)$ and $B_2 = (a_2, b_2)$. Now let $B_3 = (max(a_1,a_2), min(b_1,b_2))$ with $a_1,a_2<x<b_1,b_2$ so $x \in B_3$. So, $x \in B_3 \subseteq B_1 \cap B_2$.
+		\item Now show it generates $\tau$...
+		\end{enumerate} 
+	\end{proof}
+
+\section{Compactness Properties}
+
+	\begin{definition}
+	  A subset \(K\) of a topological space \(X\) is said to be \textbf{compact} if for every
+	  open cover \(\mathcal U\) of \(K\) (every collection \(\mathcal U\) of open sets
+	  such that \(\bigcup \mathcal U\supseteq K\)) there exists a finite subcollection
+	  \(\mathcal F\subseteq \mathcal U\) that also covers \(K\) (that is,
+	  \(\bigcup\mathcal F\supseteq K\)).
+	\end{definition}
+
+	\begin{theorem}
+	  Any finite union of compact subsets is compact.
+	\end{theorem}
+
+	\begin{proof}
+	$K_1$ and $K_2$ are compact, so let $\mathcal{U}_3$ be an open cover of $K_3 = K_1 \cup K_2$. So let $\mathcal{U}_1 = \mathcal{U}_3, \bigcup \mathcal{U}_3 \supseteq K_1$ and $\mathcal{U}_2 = \mathcal{U}_3, \bigcup \mathcal{U}_3 \supseteq K_2$. Since $K_1, K_2$ are compact choose finite $\mathcal{F}_1 \subseteq \mathcal{U}_1 = \mathcal{U}_3$ and $\mathcal{F}_2 \subseteq \mathcal{U}_2 = \mathcal{U}_3$, so $\bigcup \mathcal{F}_1 \supseteq K_1$ and $\bigcup \mathcal{F}_2 \supseteq K_2$ and $\bigcup (\mathcal{F}_1 \cup \mathcal{F}_2) \supseteq K_3$. Since $\mathcal{F}_1 \cup \mathcal{F}_2$ is a finite subset of $\mathcal{U}_3, K_3$ is compact.
+	\end{proof}
+
+	\begin{proposition}
+	  Any finite subset of a topological space is compact.
+	\end{proposition}
+
+	\begin{proof}
+	For $F = \lbrace x_i : 0 \leq i < n \rbrace \subseteq \mathbb{X}$, let $\mathcal{U}$ be an open covering of $F$ so $\bigcup \mathcal{U} \supseteq F$. For each $0 \leq i < n$, let $U_i \in \mathcal{U}$ satisfy $x_i \in U_i$. Let finite $\mathcal{F} = \lbrace U_i : 0 \leq i < n \rbrace \subseteq \mathcal{U}$, so $\bigcup \mathcal{F} \supseteq F$ and $F$ is compact.
+	\end{proof}
+
+	\begin{proposition}
+	  The subset \(\{0\}\cup\{\frac{1}{n}:n\in\mathbb Z^+\}\) of \(\mathbb R\) is compact.
+	\end{proposition}
+
+	\begin{proof}
+	Let $K = \lbrace 0 \rbrace \cup \lbrace \frac{1}{n} : n \in \mathbb{Z^+} \rbrace \subseteq \mathbb{R}$ and let $\mathcal{U}$ be an open covering of $K$. We may choose $U_0 \in \mathcal{U}$ where $0 \in U_0$. So pick $a<b \in \mathbb{R}$ where $0 \in (a, b) \subseteq U_0$. Let $N \in \mathbb{Z}^+$ where $0 < \frac{1}{N} < b$. Now let finite $F = \lbrace \frac{1}{m} : 1 \leq m < N \rbrace$ so it is compact, and choose $\mathcal{F} \subseteq \mathcal{U}$ with $\bigcup \mathcal{F} \supseteq F$. So, $\lbrace \bigcup \mathcal{F} \cup (a,b) \cup U_0 \rbrace \supseteq K$.
+	\end{proof}
+
+	\begin{proposition}
+	  Any unbounded subset of \(\mathbb R\) is not compact.
+	\end{proposition}
+	\begin{proof}
+	Let $K$ be an unbounded subset of $\mathbb{R}$. Let $\mathcal{U} = \lbrace (n-2, n) : n \in \mathbb{Z} \rbrace$. Let $n_i \in \mathbb{Z}$ be arbitrary for $0 \leq i < n$. Then $\mathcal{F} = \lbrace (n_i - 2, n_i) : 0 \leq i < n \rbrace$ is an arbitrary finite sub collection of $\mathcal{U}$. However, $\bigcup \mathcal{F} \not\supseteq K$, for $min(n_i-2: 0 \leq i < n)$ and $max(n_i : 0 \leq i < n)$ we can find a $k \in K : k < min(n_i-2: 0 \leq i < n)$ or $k > max(n_i : 0 \leq i < n)$, so $k  \not\in \bigcup \mathcal{F}$ and $K$ is not compact.
+	\end{proof}	
+
+	\begin{proposition}
+	  Any open interval \((a,b)\subseteq\mathbb R\) is not compact.
+	\end{proposition}
+	\begin{proof}
+	Let $K = (a, b) \subseteq \mathbb{R}$, Let $\mathcal{U} = \lbrace (x, y) : x, y \in \mathbb{R}, a < x < y < b \rbrace$. So, $\bigcup \mathcal{U} \supseteq K$, and $\bigcup \mathcal{U} = K$. Let $n \in \mathbb{Z}$, let $x_i, y_i \in \mathbb{R}$ be arbitrary with $0 \leq i < n$. Then, $\mathcal{F} = \lbrace (x_i, y_i) : 0 \leq i < n \rbrace$ is an arbitrary finite subset of $\mathcal{U}$. However $\bigcup \mathcal{F} \not\supseteq K$, for $min(x_i : 0 \leq i < n)$ we can find a $k \in K : k < min(x_i : 0 \leq i < n)$ which is greater than $a$ so $k \not\in \bigcup \mathcal{F}$ and $K$ is not compact.
+	\end{proof}
+
+	\begin{definition}
+	  A subset \(K\) of a topological space \(X\) is said to be \textbf{Lindel\"of} if for every
+	  open cover \(\mathcal U\) of \(K\) (every collection \(\mathcal U\) of open sets
+	  such that \(\bigcup \mathcal U\supseteq K\)) there exists a countable subcollection
+	  \(\mathcal F\subseteq \mathcal U\) that also covers \(K\) (that is,
+	  \(\bigcup\mathcal F\supseteq K\)).
+	\end{definition}
+
+	\begin{definition}
+	  A subset \(K\) of a topological space \(X\) is said to be \textbf{\(\boldsymbol{\sigma}\)-compact} if
+	  there exist compact subspaces \(K_n\) of \(X\) for \(n\in\mathbb N\) such that
+	  \(K=\bigcup_{n\in\mathbb N} K_n\).
+	  \newline \newline
+	\end{definition}
+	\begin{theorem}
+		Every \(\boldsymbol{\sigma}\)\textbf{-compact} subset of a topological space is \textbf{Lindel\"of}.
+	\end{theorem}
+	\begin{proof}
+	Let $K$ be \(\sigma\)-compact. Let $\mathcal{F}_n = \lbrace U_{n0}, U_{n1}, ..., U_{nm} \rbrace$ be a finite subcover of $\mathcal{U}$ for $K_n$. So, $\mathcal{C} = \bigcup_{n \in \mathbb{N}} \mathcal{F}_n$ is a countable subcover of $\mathcal{U}$ for $K$. Therefore $K$ is Lindel\"of.
+	
+	\end{proof}
 
 
+	\begin{definition}
+	  A subset \(K\) of a topological space \(X\) is said to be \textbf{hemicompact} if there exists compact sets $K_n \subseteq K$ for $n \in \mathbb{N}$ such that for every compact subset \(H\subseteq K\), \(H\subseteq K_n\) for some \(n\in\mathbb N\).
+	\end{definition}
 
+	\begin{theorem}
+		Every \textbf{hemicompact} subset of a topological space is \(\boldsymbol{\sigma}\)\textbf{-compact}.
+	\end{theorem}
+	\begin{proof}
+		Let $K_n \subseteq K$ witness hemicompactness, of course $\underset{n \in \mathbb{N}}{\bigcup}K_n \subseteq K$, since $K_n \subseteq K$. Let $k \in K$, so $\lbrace k \rbrace$ is compact and $\bigcup\lbrace k \rbrace = K$. For $k_n \in K$, choose $K_n : k_n \in K_n \subseteq K$, so $K = \underset{n \in \mathbb{N}}{\bigcup}K_n$
+	\end{proof}
+
+	\begin{definition}
+		$X$ is \textbf{locally compact} if for every $x \in X$ there exists an open set $U$ and compact $K$ with $x \in U \subseteq K$.
+	\end{definition}
+	
+	\begin{definition}
+		$x$ is a \textbf{cluster point} of $\langle p_n \rangle_{n < \omega}$ if and only if for every neighborhood $U$ of $x$, $U$ hits infinitely many $p_n$.
+	\end{definition}
+
+\section{Topological Games}
+
+	\begin{definition}
+		$\boldsymbol{Gru_{\mathcal{K},\mathcal{P}}(X)}$ is a game defined as the $Gruenhage compact/point game$ with players $\mathcal{K}$, $mathcal{P}$ played on a topological space $X$. During round $n$, $\mathcal{K}$ chooses a compact subset $K_n$ of $X$, followed by $\mathcal{P}$ choosing a point $p_n \in X$ such that $p_n \not\in \bigcup_{m\leq n}K_m$. $\mathcal{K}$ wins if and only if $\langle p_n \rangle_{n<\omega}$ lacks a \textbf{cluster point}. 
+	\end{definition}
+	
+	\begin{definition}
+	$\boldsymbol{\mathcal{K} \underset{pre}{\uparrow} Gru_{\mathcal{K}, \mathcal{P}}(X)}$ is the statement that $\mathcal{K}$ has a winning strategy $\sigma : \omega \rightarrow \mathcal{K}(X)$ that depends only on the round number (ignores the moves of $\mathcal{P}$).
+	\end{definition}
+
+	\begin{theorem}
+		If $X$ is \textbf{Lindel\"of} and locally compact, then $\boldsymbol{\mathcal{K}$ $\underset{pre}{\uparrow}$ $Gru_{\mathcal{K}, \mathcal{P}} (X)}$
+	\end{theorem}
+	\begin{proof}
+		For $x \in X$, let $x \in U_x \subseteq K_x$ for $U_x$ open and $K_x$ compact. Then by definition of Lindel\"of choose $U_n \in \mathcal{U} = \lbrace U_x : x \in X \rbrace$ such that $\underset{n \in \mathbb{N}}{\bigcup}U_n = X$. Then for each $U_n$, there exists compact $K_n$ where $U_n \subseteq K_n$. \newline
+		For $Gru_{\mathcal{K}, \mathcal{P}} (X)$, let $\sigma(n) = K_n$ denote a strategy for $\mathcal{K}$, $\mathcal{K}$ chooses compact $K_n \supseteq U_n \in \mathcal{C}$ and $\mathcal{P}$ chooses $p \in X$ such that $p \not\in K_n$. $\lbrace K_i : i < \omega \rbrace$ is countable and $\bigcup \lbrace K_i : i < \omega \rbrace \supseteq X$. For $\mathcal{P}$ to win, there must be $U_n \in \mathcal{C}$ such that $\sigma(n) \not\supseteq U_n$, but we've already established that $\bigcup \lbrace K_i : i < \omega \rbrace \supseteq X$ so contradiction, thus $\mathcal{K}$ $\underset{pre}{\uparrow}$ $Gru_{\mathcal{K}, \mathcal{P}} (X)$.
+	\end{proof}
+
+	\begin{lemma}
+	Let $K$ be a compact subset of $X$. If $\langle p_n \rangle$ is a sequence of points in $K$, then $\langle p_n \rangle$ has a cluster point.
+	\end{lemma}
+	\begin{proof}
+	This is obviously true if the sequence only uses finitely many different points (one point must be repeated infinitely often, so it is its own cluster point). So without loss of generality $\langle p_n \rangle$ uses infinitely many different points. If $\langle p_n \rangle$ didn't have a cluster point, then for each $x \in K$, let $U_x$ contain only finitely many $p_n$. $\lbrace U_x : x \in K \rbrace$ covers $K$, so choose $x_i$ for $i \leq n : \lbrace U_{x_i} : i \leq n \rbrace$ covers $K$. But each $U_{x_i}$ contains only finitely many $p_n$, so $\langle p_n \rangle$ cannot have infinitely many different points to choose, contradiction. So $\langle p_n \rangle$ does have a cluster point.
+	\end{proof}
+
+	\begin{theorem}
+		$\boldsymbol{\mathcal{K}$ $\underset{pre}{\uparrow}$ $Gru_{\mathcal{K}, \mathcal{P}} (X)} \Rightarrow X$ is \textbf{hemicompact}.
+	\end{theorem}
+	\begin{proof}
+		We prove the contrapositive. Let $\sigma$ be a predetermined strategy, and assume $X$ isn't hemicompact. So there exists a compact $K$ that isn't a union of finite $\sigma(n)$, so player $\mathcal{P}$ may always legally choose a point $p_n \in K$. Then by the lemma, $\langle p_n \rangle$ has a cluster point. Therefore $\sigma$ isn't a winning strategy.
+	\end{proof}
 \end{document}
